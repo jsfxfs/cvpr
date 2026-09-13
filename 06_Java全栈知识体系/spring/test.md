@@ -269,9 +269,9 @@ public class ProxyDemo {
 
 为什么会想到这种方式呢？如果你清楚Lombok, 以及 MapStruct等工具原理，你就会理解可以通过注解方式实现编译时将代码逻辑织入的。你可以通过如下的文章回顾相关知识：
 
-1. [Java 基础 - 注解机制详解](../java/basic/java-basic-x-annotation.md)
-2. [常用开发库 - Lombok工具库详解](../develop/package/dev-package-x-lombok.md)
-3. [常用开发库 - MapStruct工具库详解](../develop/package/dev-package-x-mapstruct.md)
+1. [Java 基础 - 注解机制详解](../java/basic/Java 基础 - 注解机制详解.md)
+2. [常用开发库 - Lombok工具库详解](../develop/package/常用开发库 - Lombok工具库详解.md)
+3. [常用开发库 - MapStruct工具库详解](../develop/package/常用开发库 - MapStruct工具库详解.md)
 
 通过上述的例子和思路，基本能够帮助你铺垫理解AOP实现原理的主要思路，在此基础上我们将进一步去理解。
 
