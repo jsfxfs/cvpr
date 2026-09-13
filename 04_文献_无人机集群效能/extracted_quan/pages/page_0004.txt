@@ -1,0 +1,115 @@
+4 W. QUAN et al.
+explored area; such models can offer a potential direction for 3.2. UAVS simulation and SoS indicators
+future research.
+While current research in Data-driven SEE has largely
+The simulation system serves as the medium for assessing the
+focused on traditional machine learning approaches, deep
+effectiveness of unmanned swarms. To provide a carrier for
+learning-based methods, especially CNN-based networks,
+the evaluation, a simulation system for UAVS is established
+offer significant advantages in extracting complex relationships
+for further effectiveness evaluation. It is worth noting that
+from SoS indicators. These methods are particularly well-
+our Data-driven SEE framework is not limited to this simula-
+suited for capturing the emergent behaviors and non-
+tion system, but can adapt to different missions. Considering
+linearities present in UAVS systems. Thus, the application of that UAVS are widely applied to target detection,3 a typical
+CNN to SEE remains a promising area for further exploration.
+scenario for collaborative detection and tracking tasks based
+Among much of the existing research on Data-driven SEE,
+on Refs. 19,24 and 25 is designed and simulated. The designa-
+they have not sufficiently considered the challenges related to
+tion details of the simulation system are described in Appendix
+data collection, particularly the high costs and complexities
+A. The mission requires detection drones and communication
+of gathering large-scale, high-quality data from simulation sys-
+drones to detect and track multiple dynamic targets (ground
+tems or the real world.40 Moreover, these approaches often fail
+vehicles in this task) in a multi-obstacle urban environment.
+to consider the alignment between the trained models and the
+The UAVS will search the map for the vehicles and track tar-
+actual requirements of the systems.11 In real-world applica-
+gets once located. If one target is tracked for a certain period,
+tions, ensuring that model predictions align with the specific
+the tracking task for that target is considered successful. In
+demands of UAVS is critical to achieving accurate and reliable
+order to increase the complexity of the task, the target vehicles
+effectiveness evaluations.
+are considered to cause drones to become disabled during the
+To address these gaps, this study will explore methods for
+tracking process. Fig. 1 shows some scenarios of the simulated
+overcoming the challenges of data collection and propose solu-
+missions, including the 3D scenario, 2D scenario, and a local
+tions to ensure that the trained models align with real-world
+view of a group of UAVS, including 4 detection UAVs and
+application requirements. The focus will be on developing a
+1 communication UAV is tracking one blue vehicle target. In
+deep learning-based SEE framework that not only captures
+these scenarios, the UAVS and target vehicles have been
+the complex relationships among SoS indicators but also
+amplified for better display. The red UAV represents the com-
+requires a limited cost to be established.
+munication UAV, and the yellow UAV denotes the UAV for
+detection. The blue vehicle represents target vehicles tracked
+by UAVS.
+3. Effectiveness evaluation framework of UAVS
+Utilizing the established scenario and simulation system,
+the key indicators that influence the effectiveness of UAVS
+3.1. SEE problem for UAVS
+and the method to evaluate the SoS effectiveness are defined.
+As shown in Table 1, UAVS are categorized into communica-
+SEE assesses the target’s effectiveness based on predefined SoS
+tion UAVs and detection UAVs. Based on their characteris-
+indicators, helping to identify gaps and optimize the effective-
+tics, key SoS indicators include quantity, maximum speed,
+ness under varying conditions. The evaluation of UAVS sys-
+acceleration, and detection range (or communication range
+tems’ effectiveness is a critical component in the development
+for communication UAVS).
+of unmanned system configurations. Given its high accuracy
+These indicators are chosen because they can be adjusted
+and low time cost, Data-driven SEE is particularly well-
+before the mission, allowing for better mission adaptation
+suited for assessing UAVS. By leveraging historical simulation
+and improved performance. Indicators that cannot be modi-
+data to construct an evaluation model, Data-driven SEE can
+fied during the task are excluded from the evaluation, as they
+learn the relationship between swarm SoS indicators and over-
+fall outside of control. To enhance the universality and scala-
+all SoS effectiveness.
+bility of the SEE model, the relevant indicators of targets to be
+Mathematically, Data-driven SEE for UAVS can be
+tracked, similar to UAVS SoS indicators, are also included in
+defined as follows: Based on the task performance data col-
+the model’s input. The inclusion of targets’ indicators is cru-
+lected from the UAVS simulation system, a simulated data-
+cial, as it introduces uncertainty into the mission. This prevents
+set O O O O can be established, consisting of
+s s1 s2 sn the model from relying on fixed parameters and ensures adapt-
+multiple UAVS SoS indicators and corresponding effective-
+ability to the dynamic, unpredictable nature of real-world sce-
+ness data. The SEE data for UAVS i, denoted as
+narios. Therefore, 12 main factors are considered, which can
+O D E , consists of D D D D , which rep-
+si i i i i1 i2 im significantly influence UAVS’ effectiveness.
+resents m SoS indicators, and E , which denotes the simu-
+i In terms of the measurement of SoS effectiveness, the task
+lated SoS effectiveness. The goal of the Data-driven SEE
+completion rate is the primary factor based on the characteris-
+for UAVS is to construct an evaluation model capable of
+tics of the task. This indicator represents the proportion of tar-
+predicting the effectiveness E through the given SoS indica-
+i gets detected and tracked within the specified time in the task.
+tors D . Thus, the model can be expressed as E f D ,
+i i i Assuming that the total number of target vehicles is N and the
+t
+where f is the prediction function, the core objective of
+number of targets detected and tracked by the drone swarm is
+the SoS effectiveness model. Once the model is fully trained,
+N , the completion rate of the task M is
+d c
+new UAVS, along with their respective SoS indicators, can
+N
+be evaluated and analyzed. M t 1
+c N
+d

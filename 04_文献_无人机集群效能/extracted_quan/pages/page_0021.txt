@@ -1,0 +1,103 @@
+System-of-systems effectiveness evaluation of UAV swarm: A data-driven perspective 21
+7. Han C, Xiong W, Jian P. Operational effectiveness evaluation of 26. Kong LH, Wang LZ, Cao ZZ, et al. Resilience evaluation of
+Reliab Eng
+space-based information system based on improved AHP-BPNN UAV swarm considering resource suppleme ntation.
+2021 IEEE 5th information technology, networking, Syst Saf
+model. 2024;241:109673.
+electronic and automation control conference
+27. Bai GH, Li YJ, Fang YN, et al. Network approach for resilience
+(ITNEC).
+Piscataway: IEEE Press; 2021. evaluation of a UAV swarm by considering communication
+8. Jia NP, Yang ZW, Yang KW. Operational effectiveness limits. Reliab Eng Syst Saf 2020;193:106602.
+evaluation of the swarming UAVs combat system based on a 28. Wang Q, Ding LY, Han BH, et al. Research on fighter air
+system dynamics model. IEEE Access 2019;7:25209–24. combat effectiveness evaluation based on RVM and KFDA.
+9. Hu XW, Luo PC, Zhang XN, et al. Research on the effectiveness 2020 IEEE international conference on artificial intelligence and
+2018 the 2nd computer applications (ICAICA).
+evaluation of big data in combat simulation. Piscataway: IEEE Press; 2020.
+international conference on big data research . New York: ACM; 29. Zhao LD, Wang B, He J, et al. SE-DEA-SVM evaluation
+J Syst Eng
+2018. method of ECM operational disposition scheme.
+Electron
+10. Qi ZF, Liu QQ, Wang J, et al. Battle damage assessment based 2022;33(3):600–11.
+an improved Kullback-Leibler divergence sparse
+on 30. Yu C, Chang L, Zhou Y, Sun J. Decision making and evaluation
+Front Inf Technol Electron Eng
+autoencoder. 2017;18 for autonomous systems using feedback-based attribute
+(12):1991–2000. Syst Eng Electron
+extraction and anti-causality. 2025 [Chinese].
+11. Wang HZ, Treder MS, Marshall D, et al. A skewed loss function 31. Zhao H, Zhou F, Yang W, et al. Research on effectiveness
+for correcting predictive bias in brain age prediction. IEEE Trans
+evaluation method of anti-missile equipment system based on
+Med Imag 2023;42(6):1577–89. GWO-DBN. Mod Def Technol 2025;53(2):54 [Chinese].
+12. Liu P, Wang LZ, Ranjan R, et al. A survey on active deep 32. Chen C, Quan W, Shao Z. Aerial target threat assessment based
+ACM Comput Surv J Syst Eng
+learning: from model driven to data driven. on gated recurrent unit and self-attention mechanism.
+2022;54(10s):1–34. Electron 2024;35(2):361–73.
+13. Saaty TL. How to make a decision: The analytic hierarchy 33. Kong FR, Xu G. Fuzzy evaluation of mechanical motion device
+Eur J Oper Res 2023 2nd
+process. 1990;48(1):9–26. design performance based on deep learning algorithm.
+14. He B, Wang JT, Zhang RF, et al. Efficiency evaluation of international conference on data analytics, computing and artificial
+intelligence (ICDACAI).
+underwater glider fleet based on Fuzzy-AHP-ADC model. Piscataway: IEEE Press; 2023.
+Expert Syst Appl 2025;271:126685.
+34. Rumelhart DE, Hinton GE, Williams RJ. Learning
+15. Tian GD, Zhang HH, Zhou MC, et al. AHP, gray correlation, representations by back-propagating errors. Nature
+and TOPSIS combined approach to green performance 1986;323:533–6.
+evaluation of design alternatives. IEEE Trans Syst Man 35. Li C, Zhang C, Li JX. Establishm ent of effectiveness evaluation
+Cybern Syst
+2017;48(7):1093–105. indicator system based on 1D-CNN. 2020 Chinese control and
+decision conference (CCDC).
+16. Li HL, Li D, Li YH. A multi-index assessment method for Piscataway: IEEE Press; 2020.
+Chin
+evaluating coverage effectiveness of remote sensing satellite. 36. Zhao HY, Zhou F, Yang WJ, et al. Data-driven effectiveness
+J Aeronaut
+2018;31(10):2023–33. evaluation modeling and simulation of anti-missile equipment
+J Natl Univ Def Technol
+17. He DQ, Liu GQ, Chen YJ, et al. Evaluation and prediction of system. 2025;47(3):81–9 [Chinese].
+train communication network performance. IEEE Trans Veh 37. Kipf TN, Welling M. Semi-Supervised classification with graph
+Technol
+2022;71(5):4898–910. convolutional networks. 2017 international conference on
+18. Shao RR, Fang ZG, Gao S, et al. G-BDP-ADC model for learning representations (ICLR). 2017.
+effectiveness evaluation of low orbit satellite communication 38. Mou ZY, Gao FF, Liu J, et al. Resilient UAV swarm
+IEEE Access
+system in the context of poor information. communications with graph convolutiona l neural network.
+2019;7:157489–505. IEEE J Sel Areas Commun 2022;40(1):393–411.
+19. Quan W, Jia LP, Zhang Z, et al. A multi-dimensional dynamic 39. Zhao BC, Huo MY, Li Z, et al. Graph-based multi-agent
+evaluation method for the intelligence of unmanned aerial reinforcement learning for collaborative search and tracking of
+2023 IEEE international conference on J Aeronaut
+vehicle swarm. multiple UAVs. Chin 2025;38(3):103214.
+unmanned systems (ICUS). 40. Wu DR, Huang J. Affect estimation in 3D space using multi-
+Piscataway: IEEE Press; 2023.
+task active learning for regression. IEEE Trans Affect Comput
+20. Yang YH, Guo X, Hai XS, et al. Modeling and vulnerability
+analysis of UAV swarm based on two-layer multi-edge complex 2022;13(1):16–27.
+Reliab Eng Syst Saf 41. Yuan SX, Song GM, Huang GQ, et al. Reshaping hyperspectral
+network. 2025;256:110779.
+21. Hu TZ, Zong Y, Lu NY, et al. Toward the resilience of UAV data into a two-dimensional image for a CNN model to classify
+Remote Sens
+swarms with percolation theory under attacks. Reliab Eng Syst plant species from reflectance. 2022;14(16):3972.
+Saf
+2025;254:110608. 42. Wang Z, Oates T. Imaging time-series to improve classification
+2015 the 24th international conference on
+22. Liu H, Guo Q, Tian YL, et al. A methodology for aircraft and imputation.
+artificial intelligence.
+mission effectiveness evaluation and design space exploration New York: ACM; 2015.
+Chin J Aeronaut 43. He KM, Zhang XY, Ren SQ, et al. Deep residual learning for
+based on virtual operational test. 2025;38
+2016 IEEE conference on computer vision and
+(2):103233. image recognition.
+pattern recognition (CVPR). Piscataway: IEEE Press; 2016.
+23. Shi LK, Pei Y, Yun QJ, et al. Agent-based effectiveness
+evaluation method and impact analysis of airborne laser 44. Huber PJ. Robust estimation of a location parameter. New
+Chin J Aeronaut
+weapon system in cooperation combat. York: Springer; 1992. p. 492–518.
+2023;36(4):442–54. 45. Koenker R. Quantile regression . Cambridge: Cambridge
+24. Quan W, Chen C, Zhang YT. A modified NSGA-II algorithm University Press; 2005.
+for solving simulation-based bi-objective system effectiveness 46. Cai WB, Zhang MH, Zhang Y. Batch mode active learning for
+optimization of UAV swarm. 2024 14th Asian control conference regression with expected model change. IEEE Trans Neural Netw
+(ASCC). Learn Syst
+Piscataway: IEEE Press; 2024. 2017;28(7):1668–81.
+25. Jia LP, Wang LD, Quan W, et al. A multi-agent based 47. Liu ZA, Jiang X, Luo HB, et al. Pool-based unsupervised active
+simulation modeling method for UAV swarm collaborative learning for regression using iterative representativeness-
+combat. 2024 39th youth academic annual conference of Chinese diversity maximization (iRDM). Pattern Recognit Lett
+association of automation (YAC). Piscataway: IEEE Press; 2024. 2021;142:11–9.

@@ -1,0 +1,65 @@
+System-of-systems effectiveness evaluation of UAV swarm: A data-driven perspective 3
+calculation of effectiveness based on these indicators. For the ing techniques to model the non-linear relationships between
+effectiveness calculation, the experience-driven and mathemat- input indicators and output effectiveness, enabling the perfor-
+ical analysis-driven methods are first applied. The experience- mance evaluation by learning directly from historical data.
+driven method, such as the Analytic Hierarchy Process These methods establish a complex link between SoS indica-
+(AHP),13 relies on expert judgment or empirical data to assign tors and effectiveness, facilitating accurate predictions and
+weights to indicators in SEE. AHP is often combined with assessments.
+techniques like fuzzy theory14 and TOPSIS15 to better repre- Due to their ability to rapidly and precisely assess system
+sent expert knowledge. Li et al.16 combined AHP with the performance, Data-driven SEE methods have garnered sub-
+entropy weight method to form a multi-index evaluation stantial research interest. Traditional machine learning
+method for evaluating the coverage effectiveness of a remote approaches, such as the BP Neural Network (BPNN),7 Rele-
+sensing satellite. Furthermore, He et al.17 adopted a multidi- vance Vector Machine (RVM),28 and Support Vector Machine
+mensional normal cloud model to determine SoS indicators’ (SVM),29 have been applied to successfully evaluate systems
+weights and thus evaluated the Communication. However, with simpler structures. These techniques rely on straightfor-
+the application of these effectiveness evaluation methods is ward models to establish a mapping relationship between
+mainly based on expert experience, thereby always tending to SoS indicators and corresponding effectiveness. Yu et al.30
+be highly subjective and resulting in evaluation outcomes that developed some basic neural networks to evaluate the effec-
+are hard to trust. tiveness of UAVS. To enhance the performance of the Data-
+Mathematical analysis-driven SEE methods construct mod- driven model, they adopt feedback-based attribute extraction
+els to quantify the relationships between SoS indicators and and anti-causality detection to select more valuable indicators
+effectiveness. These models, like ADC18 and the entropy and training data. Zhao et al.31 adopted the Deep Belief Net-
+weight method,19 provide a precise way to compute system work (DBN) to evaluate the effectiveness of the anti-missile
+performance by analyzing how changes in indicators affect equipment system. In this Data-driven model, the parameter
+outcomes. Owing to the complexity and uncertainty of swarm of the DBN is optimized by the grey wolf optimization algo-
+systems, traditional mathematical analysis often simplifies the rithm. Han et al.7 combined data from a simulation and
+system, which causes a reduction in the accuracy and reliability AHP methods to train a BPNN for effectiveness evaluation.
+of the results. In a related research area, resilience evaluation Zhao et al.29 employed SVM to assess the effectiveness of dif-
+of UAVS, complex network modeling approaches are widely ferent disposition strategies. However, as system complexity
+applied, where the swarm is represented as a graph, and indi- grows and the volume of simulation and real-world data
+cators such as connectivity, robustness, and efficiency are increases, traditional small-data models and machine learning
+mathematically analyzed.20 In terms of effectiveness, it can techniques are becoming less effective. A promising solution to
+be represented in a complex network. Hu et al.21 calculated this challenge is introducing deep learning techniques, which
+the communication effectiveness based on the path lengths of have the potential to reconstruct simulation processes and
+networks. enhance effectiveness evaluation.32 Deep Neural Networks
+In contrast, simulation-driven SEE methods leverage simu- (DNN),33 as foundational deep learning models, have already
+lation models to evaluate SoS effectiveness. These methods been applied to SEE problems. Additionally, autoencoders,34
+simulate the behavior of the system under specific conditions known for their robust dimensionality reduction capabilities,
+defined by the SoS indicators. By executing these simulations, can effectively represent the information contained in high-
+effectiveness can be determined by the results of the system’s dimensional indicators with fewer dimensions, making them
+performance in a virtual environment.22 Jia et al.8 proposed a valuable tool for SEE applications. Qi et al.10 were among
+an effectiveness evaluation method for UAVS systems through the first to integrate sparse representations into autoencoders,
+the established simulation system based on the system dynam- allowing for the evaluation process and enabling effective
+ics model. Furthermore, Agent-Based Modeling (ABM)23 is assessment of high-dimensional effectiveness.
+frequently employed as a simulation-driven evaluation tech- Convolutional Neural Network (CNN), widely regarded as
+nique, especially for UAVS. Quan et al.24 and Jia et al.25 one of the most powerful deep learning methods, is particu-
+employed ABM to establish the simulation system of the larly effective in extracting complex, deep features across
+UAVS in tracking tasks and thus applied it in evaluating multi-dimensional data. Through convolutional structures,
+and further optimizing its effectiveness. Furthermore, Kong CNN can explore and capture the relationships between differ-
+et al.26 and Bai et al.27 respectively established multi-agent sim- ent SoS indicators. Li et al.35 employed 1D-CNN to process
+ulation systems to evaluate the effectiveness and resilience of one-dimensional SoS indicators in SEE problems. Zhao et al.36
+UAVS under resource supplementation and communication applied a CNN with Bayesian optimization to learn the rela-
+limits. Simulation-driven evaluation methods yield results with tion between the 1D indicators and the effectiveness of anti-
+high credibility; however, rapid assessment of equipment sys- missile equipment based on the simulation data. Moreover,
+tems is hindered by high modeling costs and lengthy simula- by transforming SoS indicators into two or more dimensions,
+tion modeling and execution times. CNN can more effectively uncover implicit relationships
+between indicators, improving the speed and accuracy of the
+2.2. Data-driven SEE evaluation process. Besides CNN, advanced deep learning
+models such as Graph Neural Networks (GNNs), which can
+express the complex relation of complex point and edges,37
+The large volumes of historical data generated during large-
+scale simulations and actual task executions provide valuable have also shown success in swarm coordination and communi-
+opportunities to uncover complex relationships between sys-
+cation optimization,38,39 although their direct application to
+tem entities. Data-driven SEE methods utilize machine learn-
+SoS effectiveness evaluation remains an open and under-

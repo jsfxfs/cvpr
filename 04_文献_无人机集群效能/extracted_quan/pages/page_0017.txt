@@ -1,0 +1,51 @@
+System-of-systems effectiveness evaluation of UAV swarm: A data-driven perspective 17
+Table 10 SoS indicators and effectiveness of UAVS instances.
+SoS indicator Evaluated UAVS scheme
+Type Indicator No. 1 No. 2 No. 3 No. 4
+Detection UAV Quantity 60 70 70 70
+Max speed 20 25 25 25
+Max acceleration 5 5 5 5
+Sensor range 200 250 250 250
+Communication UAV Quantity 30 40 40 60
+Max speed 15 25 25 30
+Max acceleration 5 5 5 6
+Sensor range 300 300 300 350
+Target vehicle Quantity 40 40 60 60
+Max speed 20 20 24 24
+Max acceleration 6 6 6 6
+Sensor range 200 200 225 225
+Predicted SoS effectiveness 0.78 0.78 0.91 0.80
+Actual SoS effectiveness 0.8 0.8 0.92 0.81
+indicators of the UAVS serving as the decision variables. The To illustrate the simulation process, Fig. 11 shows the sim-
+optimization model is detailed in Appendix B. The SoS config- ulation scenarios for the third optimized UAVS scheme. In
+uration cost refers to the weighted cost of the UAVS system Fig. 11(a), UAVS start from the corners and search the task
+indicators, which is computed based on the eight system indi- area. Fig. 11(b) shows the mid-phase tracking process, where
+cators of both detection and communication UAVS. A communication and detection UAVs collaborate to cover the
+detailed formulation is provided in Appendix B (Eq. (B1)). entire area. Fig. 11(c) presents the end scenario of this mission,
+Take the mission circumstance of the No.1 instance in Table 10 with successfully tracked vehicles disappearing from the map.
+as an example. We can optimize SoS indicators of UAVS using By the task’s conclusion, 95 % of the vehicles were tracked,
+the multi-objective evolutionary algorithm.24 Some optimized and 27 % of the UAVs were destroyed. The final effectiveness
+solutions are shown in Table 11. is 0.90, close to the model’s evaluation result.
+The table shows four optimized UAVS SoS indicator These experiments demonstrate that the Data-driven SEE
+schemes based on the Data-driven SEE model. The effective- framework effectively evaluates the SoS effectiveness of UAVS
+ness of these solutions ranges from 0.80 to 0.94, indicating and can be used for further optimization.
+strong task performance. Compared to the original SoS indica-
+tors (Table 10), the first optimized scheme has similar effective- 6.5. Generalization and sensitivity analysis
+ness but a significantly lower configuration cost. The other
+optimized schemes also perform better in terms of either effec- To verify the generalization and sensitivity of the proposed
+tiveness or cost. These optimized UAVS systems, based on the Data-driven SEE model, this section will first conduct experi-
+Data-driven model, can help decision-makers select the most ments to test the performance of the SEE model on different
+suitable UAVS configurations for this mission. scenarios. Then, the model’s performance will also be tested
+Table 11 Optimized solutions of SoS indicators.
+SoS indicator Optimized UAVS scheme
+UAV Type Indicator No. 1 No. 2 No. 3 No. 4
+Detection UAV Quantity 43 45 47 66
+Max speed 26.17 26.07 24.8 25.13
+Max acceleration 3.74 4.15 4.68 4.93
+Sensor range 220 220 210 240
+Communication UAV Quantity 31 35 41 60
+Max speed 7.02 6.55 5.81 10.08
+Max acceleration 2.6 2.54 4.11 9.94
+Sensor range 200 200 230 330
+Objectives Effectiveness 0.8 0.84 0.89 0.94
+Configuration cost 0.37 0.41 0.47 0.76

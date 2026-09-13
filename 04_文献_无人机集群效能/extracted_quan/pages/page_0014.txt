@@ -1,0 +1,88 @@
+14 W. QUAN et al.
+provides a more suitable risk-sensitive objective for effective- ples. The results for various active learning strategies are
+ness estimation. shown in Table 6.
+Based on the experiments, it is evident that the ResNet- Table 6 presents both the mean and standard deviation of
+Skew algorithm can effectively evaluate the SoS effectiveness RMSE and MAE obtained from multiple independent experi-
+of UAVS, outperforming other commonly used algorithms ments to assess the performance stability of each active learn-
+in terms of both RMSE and MAE indicators. The model’s ing strategy. In Table 6, the iRDM-RGS active learning
+architecture enhances its metric performance and satisfies the strategy outperforms all other methods in both RMSE and
+actual application demand of the Data-driven SEE model. MAE, as well as showing superior stability. Compared to Ran-
+dom Sampling (RS), every active learning algorithm demon-
+6.3. Active learning strategy performance strates significant improvements in the quality of initial
+sample selection, highlighting the impact of active learning
+on model performance. The performance of iRDM and GSx
+This section employs the proposed active learning method
+is quite similar, though GSx exhibits greater stability. This
+iRDM-RGS to select high-value initial samples, validating
+could be attributed to iRDM’s tendency to select samples with
+the enhancement of active learning strategies on model
+decreasing representativeness and stability as the number of
+training.
+clusters grows. In contrast, iRDM-RGS combines clustering-
+6.3.1. Experimental settings and metrics based selection with greedy sampling to balance representa-
+tiveness and diversity, achieving superior performance, partic-
+To simulate an active learning scenario, we first annotate 1000
+ularly during large-scale sample selection.
+samples from the previously collected 10 000 unlabeled sam-
+To comprehensively evaluate the active learning methods,
+ples as the test set. The remaining 9000 samples are then sub-
+we would compare their performance across different sample
+jected to active learning methods, selecting between 200 and
+selection sizes by selecting between 200 and 1000 samples (ev-
+1000 samples for simulation-based annotation, which will
+ery 200 samples) from 9000 unsupervised samples. This more
+serve as the training set for the model.
+extensive test evaluates how each method performs across dif-
+For the active learning model, the following experimental
+ferent conditions and sample quantities, ensuring that the
+parameters are set after extensive testing: the iteration count
+robustness of the methods is understood in a broader context.
+G is set to 10, the RGS parameter c is set to 20, and the sam-
+max The results of these tests are shown in Table 7 and Fig. 9,
+ple collection size N through iRDM is set to 200. The RMSE
+which illustrate RMSE performance and statistical results of
+and MAE metrics are used to assess the discrepancies between
+each method at various scales.
+the model’s predicted and actual values. Euclidean distance is
+In Table 7 and Fig. 9, the iRDM-RGS method consistently
+chosen to calculate the sample values as it effectively measures
+outperforms the other active learning methods and random
+spatial relationships between samples, especially for evenly dis-
+sampling across all sample sizes. The low standard deviation
+tributed data. After standardization, it accurately reflects sim-
+of iRDM-RGS also shows its strong stability. As the number
+ilarities between samples without being influenced by feature
+of selected samples increases from 200 to 1000, the iRDM-
+scale differences.
+RGS method maintains superior performance on each index.
+To comparatively validate the iRDM-RGS method, three
+All active learning methods perform better than Random Sam-
+recent active learning regression algorithms and random sam-
+pling (RS). When only 200 samples are annotated, the iRDM-
+pling method are selected for comparative analysis: (A) GSx,49
+RGS method shows similar performance to other clustering-
+Greedy sampling on the Inputs; (B) iRDM,47 iterative
+based methods, such as iRDM and RD, which perform well
+representativeness-diversity maximization; (C) RD,50 a
+due to their high representativeness and diversity at smaller
+method synthesized representativeness and diversity; (D) RS,
+sample sizes. However, as the sample size increases, the cluster-
+a baseline method by randomly sampling. By integrating the
+ing methods begin to lose their optimal properties, and the
+aforementioned four methods with the Data-driven frame-
+GSx method, which employs greedy selection, gradually sur-
+work, we can verify the effect of these methods.
+passes them by selecting more diverse samples. The RD algo-
+rithm maintains diversity across multiple iterations, although
+6.3.2. Model evaluation and algorithm comparison
+it requires more computational time.
+We first evaluate the performance of the active learning algo- The iRDM-RGS method combines the strengths of both
+rithm by selecting 1000 samples from the 9000 unlabeled sam- iRDM and greedy-based methods. Initially, iRDM selects a
+Table 6 Statistical results for active learning strategies.
+Strategy RMSE MAE
+Mean Std (10 3) Mean Std (10 3)
+iRDM-RGS 0.073 2.02 0.055 1.31
+GSx 0.077(+) 4.10 0.059(+) 3.85
+iRDM 0.078(+) 4.09 0.059(+) 4.10
+RD 0.079(+) 3.25 0.060(+) 3.90
+RS 0.081(+) 2.21 0.061(+) 2.00

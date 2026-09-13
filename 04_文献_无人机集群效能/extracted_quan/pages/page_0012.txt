@@ -1,0 +1,73 @@
+12 W. QUAN et al.
+and deep learning. GCN and Transformer are state-of-the-art size are insufficient to utilize the self-attention mechanism
+deep learning algorithms in these years. effectively. The traditional methods, such as SE-DEA-SVM
+and BPNN-ATT exhibit relatively higher prediction errors.
+6.2.2. Model evaluation and comparison analysis SE-DEA-SVM lacks feature extraction, which limits its ability
+The proposed ResNet-Skew model is trained sufficiently to to capture complex nonlinear relationships among SoS indica-
+ensure convergence. Fig. 7 presents the RMSE convergence tors. BPNN-ATT performs better than SE-DEA-SVM but still
+curves on both the training and test datasets during iterative lacks the depth and capacity to extract deep feature represen-
+optimization. The model’s error decreases rapidly in the early
+tations, leading to suboptimal accuracy. KL-SAE achieves
+stages of training. As the number of iterations increases, the
+improved performance by using an autoencoder structure for
+RMSE curves of both the training and test sets gradually sta- feature compression, but its unsupervised nature may not align
+well with the effectiveness prediction task, resulting in moder-
+bilize, indicating steady convergence. After sufficient training,
+ate errors compared to ResNet-Skew. The proposed deep
+the RMSE on the training set drops below 0.02, while the
+learning structure of ResNet-Skew allows for better extraction
+RMSE on the test set stabilizes around 0.08. The two curves
+of deep information from the SoS indicators of UAVS,
+exhibit similar convergence trends with no observable signs
+enabling more accurate predictions through the integration
+of overfitting, suggesting that the model achieves a good bal-
+of both potential features and the original features from the
+ance between fitting capacity and generalization.
+residual modules.
+Based on the training and testing sets described earlier, we
+train the ResNet-Skew model alongside several comparison
+algorithms. The experiment is repeated ten times to statistically
+6.2.3. Model structure validation and analysis
+assess the performance of each model using the RMSE and Following model validation, this section assesses the effect of
+MAE metrics, with the results presented in Table 3. To provide two main modules within the ResNet-Skew algorithm: the
+a more robust statistical analysis (mean and standard devia- two-dimensional loop stacking of system indicators and the
+tion), the symbols ‘‘+” indicate that the ResNet-Skew model skewed loss function.
+is significantly ‘‘superior/equivalent/inferior” to other algo- During the two-dimensional transformation of system indi-
+rithms based on the Wilcoxon rank-sum test at the 5 % signif- cators, this algorithm utilizes a method based on loop stacking.
+icance level. To validate the effect of 2D transformation and the loop
+The results demonstrate that the ResNet-Skew model sig- stacking-based transformation methods, a comparison of dif-
+nificantly outperforms the other algorithms across both RMSE ferent data processing methods is conducted. The 1D convolu-
+and MAE metrics. The 1D-CNN algorithm performs the tion with the same residual structure is employed to compare
+worst, with an RMSE exceeding 0.2, indicating substantial the effect of the 2D transformation. Furthermore, the direct
+errors. In contrast, the proposed two-dimensional convolu- stacking-based 2D transformation method described in Sec-
+tional structure and following residuals structure of the tion 4.2 and Fig. 3(a) is also included to verify the advantage
+ResNet-Skew model, which is designed for the 2D data, cap- of loop stacking in 2D transformation. The results of this com-
+tures the interrelationships among the various indicators more parison are presented in Table 4.
+effectively than the one-dimensional convolution used by the While three models employ the same residual structure, the
+1D-CNN. This deeper, multidimensional feature extraction performance of applying loop stacking and direct stacking-
+enhances the model’s performance. Furthermore, GCN and based 2D transformation is superior to direct 1D convolution,
+Transformer, which are two advanced deep learning models, which can demonstrate that the 2D transformation can extract
+also achieve limited performance. The relatively poor perfor- more complex and higher-level information from the original
+mance of GCN is primarily due to the absence of inherent SoS indicators. Furthermore, the evaluation network employ-
+graph structure in the SoS indicator data. The 12- ing loop stacking also outperforms the algorithm with direct
+dimensional system indicator vector represents parallel fea- stacking modules in terms of both RMSE and MAE metrics.
+tures without explicit topological relationships. By intertwining variables across the entire two-dimensional
+Similarly, Transformer is designed for long-sequence mod- metric structure, the convolutional module can effectively
+eling tasks, where capturing long-range dependencies is essen- extract the correlations between different metrics, thus enhanc-
+tial. In our problem, the feature structure and limited dataset ing model performance.
+Furthermore, to illustrate the impact of the skewed loss
+function on relieving overestimation, this section compares
+models using biased loss functions with varying parameters k
+with those using Huber loss functions. Initially, to visually
+demonstrate the effect of the skewed loss function, we compare
+the overestimated bias (predicted values minus actual values)
+of some samples trained with the skewed loss function and
+the normal Huber loss function, as depicted in Fig. 8.
+The red line between the Huber loss point (red point) and
+the skewed loss point (green point) represents the situation
+where the overestimated bias is alleviated by the skewed loss.
+The skewed loss function significantly reduces the overesti-
+mated bias for most samples compared to the red point of
+the Huber function. However, in some cases, there is a signif-
+icant negative bias, where the original small loss is magnified
+Fig. 7 RMSE iteration curves of ResNet-Skew.

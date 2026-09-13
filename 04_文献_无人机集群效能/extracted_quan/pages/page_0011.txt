@@ -1,0 +1,122 @@
+System-of-systems effectiveness evaluation of UAV swarm: A data-driven perspective 11
+efficient model development, while the testing set, also contain-
+reduces annotation costs and enhances model training effi-
+ciency for large-scale active learning tasks. ing 1000 samples, is used to ensure a robust evaluation across a
+wider range of scenarios. This helps to assess the model’s per-
+formance and generalization capability in diverse situations.
+6. Experiments and analysis
+The hyperparameters of the model are shown as follows:
+The model is trained for 50 epochs, with optimization carried
+This experiments section will test the Data-driven evaluation
+out via Stochastic Gradient Descent (SGD), and an initial
+network and the corresponding active learning. All algorithms
+learning rate of 0.01, which is reduced by 10 % after the
+in this section are programmed using Python 3.8 on the Win10
+10th and 30th epochs. For the skewed loss function, the
+64 bit operating system with Intel Core i9 13 900 k
+k d
+parameters and are set to 0.7 and 0.05, respectively. The
+CPU@3.00 GHz, 64 GB RAM and NVIDIA GeForce RTX
+performance is evaluated using the Root Mean Square Error
+4070Ti GPU hardware environment.
+(RMSE) and MAE metrics to gauge prediction accuracy.
+6.1. UAVS mission scenario and data processing
+For comparison, the proposed ResNet-Skew algorithm is
+compared with six Data-driven evaluation methods proposed
+in recent years and state-of-the-art deep learning algorithms:
+Given the difficulty and high cost of collecting real operational
+data for large-scale UAVS systems, the simulation system can
+SE-DEA-SVM.29
+(1) This method applies a Support Vector
+provide a credible and practical alternative, ensuring that the
+Machine (SVM) as an algorithm to evaluate and predict
+data reflects the uncertainties and dynamics of real-world sce-
+the effectiveness of configuration schemes processed by
+narios. Collect data samples using the constructed simulation
+data-elevation analysis. The SVM will be directly
+system for UAVS collaborative detection and tracking tasks.
+applied to 1D SoS indicators.
+Based on simulation scenario information and preliminary
+KL-SAE.10
+(2) This method uses a sparse autoencoder
+experiments, a total of 12 SoS indicators of UAVS and targets
+based on KL divergence for the problem of damage
+will be sampled and incorporated into a dataset within a
+effectiveness evaluation. In KL-SAE, the hidden layer
+defined range. To ensure the accuracy of the effectiveness eval-
+features of the encoder, which contribute most to data
+uation model, it is essential to obtain a uniformly distributed set
+reconstruction, are selected, and features that contribute
+of SoS indicator combinations that cover all possible scenarios
+least are abandoned. KL-SAE will be directly applied to
+in the evaluation process. Given the wide range of potential val-
+1D SoS indicators.
+ues for the 12 SoS indicators, a larger sampling space is neces-
+1D-CNN.35
+(3) This method employs a parallel one-
+sary to ensure comprehensive coverage. To address this, the
+dimensional convolutional neural network for addressing
+Latin hypercube sampling method is employed to collect 10
+the problem of feature extraction in SEE. In 1D-CNN,
+000 initial sample points. This method guarantees that the sam-
+the 1D system indicators are processed by 1D convolu-
+ple points are well-distributed across the entire parameter
+tional structures with three different kernel sizes. The
+space, reducing the risk of clustering around certain values
+extracted features are synthesized to extract potential
+and maximizing scenario representation. These unlabeled sam-
+information and predict the effectiveness by DNN. 1D-
+ples will be further used for simulating, training, and validating
+CNN will also be directly applied to 1D SoS indicators.
+both the Data-driven SEE model and active learning strategy.
+BPNN-ATT.30
+(4) This method employs a backpropagation
+Each UAVS configuration is simulated when the corre-
+neural network as a baseline model to calculate the
+sponding data is selected as the training dataset. The simula-
+effectiveness of UAVS. In BPNN-ATT, a feature extrac-
+tion environment incorporates multiple stochastic factors,
+tion method is proposed based on a feedback closed-
+including communication interference, detection uncertainty,
+loop strategy, which extracts features from the original
+and probabilistic adversarial strikes. These factors introduce
+data space in reverse, based on dimension reduction by
+dynamic perturbations and randomness into the simulation
+principal component analysis. The feature extraction
+process, making the outcomes more representative of real-
+would be applied to select SoS indicators, and BPNN
+world UAVS operations. Each configuration is tested through
+will be trained to predict the effectiveness.
+ten repeated simulation runs, thereby capturing the expected
+(GCN).37
+(5) Graph Convolution Networks GCN is a state-
+performance while smoothing out occasional fluctuations due
+of-the-art deep learning framework designed to process
+to environmental noise. This approach allows the dataset to
+graph-structured data by iteratively aggregating and
+reflect both the variability and the stability of system behavior
+transforming information from neighboring nodes to
+under uncertain operational conditions.
+capture complex relational dependencies. In this experi-
+ment, the GNN model treats each SoS indicator as a
+6.2. Data-driven evaluation network performance
+node in a graph with fully connected edges.
+Transformer.48
+(6) Transformer is a state-of-the-art deep
+6.2.1. Experimental settings and metrics
+learning method. This model utilizes an encoder struc-
+To evaluate the performance of the proposed Data-driven SEE
+ture composed of multiple layers of multi-head self-
+model, ResNet-Skew, 2000 samples are randomly selected
+attention and feed-forward networks. In this experi-
+from 10 000 unlabeled data points and annotated using the
+ment, one-dimensional SoS indicators will be processed
+simulation system. These samples are split into a training set
+as a sequence by the Transformer.
+of 1000 samples and a testing set of 1000 samples. The decision
+to use 1000 samples for training is aimed at minimizing the
+The SE-DEA-SVM, KL-SAE, 1D-CNN, BPNN-ATT
+computational cost of obtaining labeled data through simula-
+algorithms aim to address the SEE problem from three differ-
+tions. By keeping the training set smaller, the focus remains on
+ent perspectives: traditional machine learning, autoencoder,

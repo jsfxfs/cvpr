@@ -1,0 +1,80 @@
+20 W. QUAN et al.
+Declaration of competing interest val, executing scene state updates, agent actions, and system
+capability checks to ensure real-time behavior and task
+The authors declare that they have no known competing execution.
+financial interests or personal relationships that could have
+appeared to influence the work reported in this paper. Appendix B. SoS effectiveness optimization model of UAVS
+Acknowledgements This section introduces the UAVS SoS effectiveness optimiza-
+tion model, further applying the Data-driven SEE framework.
+This work was supported in part by the National Natural In terms of the optimization objective, besides SoS effective-
+Science Foundation of China (Nos. 62273044 and 62022015); ness, the configuration cost is included in the optimization pro-
+in part by the National Natural Science Foundation of China cess, which is computed as a weighted sum of the UAVS
+National Science Fund for Distinguished Young Scholars, configuration indicators. It reflects the SoS-level resource
+China (No. 62025301); and in part by the National Natural requirement of a deployment plan. In this optimization prob-
+Science Foundation of China Basic Science Center Program, lem, the decision variables are the SoS indicators of UAVS.
+China (No. 62088101). Some indicators, like the number of drones, are discrete and
+usually vary within a certain integer range, while others, like
+Appendix A. Simulation system of UAVS maximum speed, are continuous. Thus, the decision variables
+are expressed as mixed variables, with discrete indicators rep-
+This section provides an overview of the simulation system resenting quantities and sensor range and continuous ones rep-
+used to apply and validate the Data-driven model. The UAVS resenting speed and acceleration. Denote z x d u c where
+simulation scenario involves a collaborative detection and x d x 1 x 2 x v is the vector of discrete indicators and
+tracking mission19,24 described as follows. u c u 1 u 2 u k is the vector of continuous indicators.
+In a2 k m 2 km city environment, UAVS is commanded The optimization objectives include maximizing SoS effec-
+to detect and track ground vehicles. UAVS equipment includes tiveness and minimizing the configuration cost. The optimiza-
+drones for communication and detection. The goal for UAVS tion model is formulated as follows:
+is to detect all the ground vehicles within 12 min and maintain max F z E f x x x u u u
+1 s 1 2 v 1 2 k
+tracking for at least 5 min without losing them. z
+We use the agent-based modeling method to build a simu- m z i n F 2 z v i 1 c i x i k j 1 w j u j
+lation model of the unmanned swarm system for this scenario. s t xl 6 x 6 xu i 1 2 v B1
+In this model, each drone is considered an agent with defined i i i
+ul 6 u 6 uu j 1 2 k
+motion, detection, and collaboration behaviors. j j j
+The drone model is designed for rotary-wing UAV. In 3D x Zv u Rk
+d c
+space, the drone’s state is represented by a vector
+In this model, E represents effectiveness calculated by the
+Q P V H , where P x y z is the position vector. s
+Data-driven SEE model. c and w are the weights for calculat-
+V v v v is the velocity vector, and H h h represents i j
+x y z h p ing the configuration cost of UAVS. The second objective is
+the horizontal and pitch angles. In the discrete simulation
+referred to as ‘‘Configuration cost” in Table 11 and through-
+framework, the UAV updates its position based on its current
+out the main text. The value constraints on x and u define
+velocity vector, which is controlled by speed and direction. The i j
+their bounds, where xl and ul are the lower bounds of indica-
+UAV has six motion control actions: acceleration, decelera- i j
+tion, left turn, right turn, ascent, and descent. These actions tors, and xu i and uu j are the corresponding upper bounds. The
+are combined for behaviors such as free exploration, direc- last constraint regulates that variables are classified as discrete
+tional tracking, and obstacle avoidance. The artificial potential or continuous. The optimization seeks to maximize SoS effec-
+field method is used for obstacle detection and avoidance. For tiveness while minimizing the configuration cost.
+detection, we use the truncated exponential decay disk proba-
+bility sensing model51 to evaluate the UAV’s detection References
+capabilities.
+1. Zhang YZ, Ding MY, Yuan Y, et al. Large-scale UAV swarm
+Collaboration is a key feature of UAVS. The formation
+path planning based on mean-field reinforcement learning. Chin
+control and communication models are designed for two types
+J Aeronaut 2025;38(9):103484.
+of UAVS: communication UAV and detection UAV. The
+2. Wang ES, Liu F, Hong C, et al. MADRL-based UAV swarm
+swarm is divided into groups, with each group containing a
+non-cooperative game under incomplete information. Chin J
+specific ratio of the two types of UAV, allowing for dynamic Aeronaut 2024;37(6):293–306.
+adjustments during the mission. The leader–follower forma- 3. Chen J, Sun J, Wang G. From unmanned systems to
+tion control model governs the group configuration. The com- autonomous intelligent systems. Engineering 2022;12:16–9.
+munication network model ensures information exchange 4. Ding JF, Si GY, Ma J, et al. Mission evaluation: expert
+between drones within and across groups, enabling target shar- evaluation system for large-scale combat tasks of the weapon
+ing, regional coverage, and emergency networking.25 system of systems. Sci China Inf Sci 2017;61(1):012106.
+5. Mitchell M. Complexity: A guided tour. 2009,OxfordUniversity
+The simulation is implemented using AnyLogic software.
+Press; Oxford.
+The simulation model for collaborative detection and tracking
+6. Tian GD, Hao NN, Zhou MC, et al.Fuzzygreychoquetintegral
+is based on intelligent agent models, using high-frequency
+for evaluation of multicriteria decision making problems with
+clock signals for continuous time simulation. The simulation
+interactive and qualitative indices. IEEE Trans Syst Man Cybern
+control module updates the system at each clock signal inter- Syst 2021;51(3):1855–68.

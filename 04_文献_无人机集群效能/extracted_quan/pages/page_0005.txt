@@ -1,0 +1,52 @@
+System-of-systems effectiveness evaluation of UAV swarm: A data-driven perspective 5
+Fig. 1 Collaborative detection and tracking simulation scenario of UAVS.
+cators are sampled from the data sampling space and
+Table 1 SoS indicators for UAVS typical scenario.
+then simulated through the simulation system. The effec-
+Type Category SoS indicator tiveness calculated by simulation would be collected and
+combined with the indicators to become the dataset for
+UAVS Detection UAV Quantity, Maximum speed, Maximum
+Communication acceleration, Detection the evaluation module.
+UAV (Communication) range (2) Data-driven effectiveness evaluation network. Based on
+Target Ground vehicle the simulated dataset, this part establishes and trains a
+deep learning neural network for SEE of UAVS. In
+response to the difficulty of deep learning methods in
+directly matching the indicator structure of swarm sys-
+tems with practical application requirements, an evalua-
+Besides the task completion rate, the number of disabled tion network based on a residual neural network and a
+drones caused by targets’ attack should also be considered in skewed loss function is designed. After fully training
+the effectiveness calculation. The disabled degree M can the Data-driven model, the UAVS system with certain
+dis
+be expressed as the ratio of the number of disabled drones to indicators can be quickly evaluated through this model.
+all drones. Combining two factors, the SoS effectiveness E (3) Active learning for sample selection. The Data-driven
+s
+of UAVS can be calculated by applying a weighting method as evaluation model heavily relies on the simulation data.
+However, the collection of datasets requires the
+E x M x 1 M 2
+s 1 c 2 dis simulation-based labeling of unlabeled indicators’ data,
+where x and x are weights of the task completion rate and which would cost a significant amount of time to exe-
+1 2
+disabled rate. The value of weights is determined based on cute. To reduce the high-cost simulation annotation,
+operational requirements from experts, where task completion an active learning strategy is constructed to screen a
+rate is prioritized to reflect mission success as the primary small number of high-value unlabeled samples from
+objective, and disabled degree is considered to capture the sys- the sampling space. By simulating these limited but
+tem’s survivability. Therefore, x and x are set to 0.8 and 0.2. high-value samples, the number of simulations can be
+1 2
+Utilizing the established SoS indicators and effectiveness reduced while ensuring accuracy.
+measurement method, the SoS dataset can be acquired by
+the UAVS simulation system to build the Data-driven evalua- Moreover, the proposed framework is versatile and can be
+tion network, which will be discussed in the next section. applied to UAVS with different indicators under various sce-
+narios, not limited to the mentioned tracking mission. The
+3.3. Data-driven SEE framework for UAVS framework is adaptable, enabling its use for different types
+of UAVS applications, such as surveillance, search and rescue,
+and environmental monitoring, by adjusting the relevant SoS
+The proposed Data-driven SEE framework, shown in Fig. 2,
+indicators to meet the specific needs of each scenario.
+consists of three main parts: UAVS simulation and data pro-
+cessing, the Data-driven effectiveness evaluation network,
+and active learning for sample selection. 4. Data-driven evaluation network for UAVS
+(1) UAVS simulation and data processing. Data is the core 4.1. Framework of proposed SEE method
+of the Data-driven SEE method. All the data for train-
+ing the evaluation model are derived from the dataset The framework of the proposed Data-driven effectiveness
+collected by the UAVS simulation system. In this mod- evaluation network, named ResNet with Skewed Loss
+ule, simulation data of UAVS with important SoS indi- (ResNet-Skew), is depicted in Fig. 2. The network model con-

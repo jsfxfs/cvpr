@@ -1,0 +1,231 @@
+### 知识点补充
+
+- **Java基础和进阶**
+  - 面向对象基础
+  - Java基础语法
+  - Java集合框架
+  - Java IO框架
+  - Java并发框架
+- **Java版本和特性**
+  - Java 8版本特性
+  - Java 9-11版本特性
+  - Java 12-17版本特性
+- **JVM和底层技术**
+  - 类加载机制
+  - 字节码技术
+  - 内存结构详解
+  - 垃圾回收技术
+  - 调试排错相关
+- **数据结构和算法**
+  - 数据结构基础
+  - 排序算法
+  - 算法思想
+  - 常见领域算法
+- **数据库**
+  - 理论基础
+    - 数据库理论和设计
+    - SQL基础
+  - 关系库
+    - MySQL
+    - PostgreSQL
+    - TiDB
+  - 列式库
+    - ClickHouse
+  - 时序库
+    - InfluxDB
+  - 图数据库
+    - Neo4J
+  - KV库
+    - Redis
+  - 文档库
+    - MongoDB
+  - 搜索库
+    - ElasticSearch
+- **中间件和框架**
+  - Web容器
+    - Tomcat
+  - ORM框架
+    - MyBatis
+    - JPA
+  - 消息队列
+    - kafka详解
+    - RocketMQ详解
+  - 认证框架
+    - Shiro
+  - 数据库连接池
+    - Hikaria
+  - 后端模板引擎
+    - Thymeleaf
+  - 任务框架
+    - ElasticJob
+  - 工作流引擎
+    - Activi
+    - Flowable
+  - 数据批处理
+    - Spring Batch
+  - 规则引擎
+    - Drools
+  - 流计算框架
+    - Flink
+- **Spring框架和开发**
+  - Spring框架
+    - Spring框架基础
+    - Spring IOC详解
+    - Spring AOP详解
+    - Spring MVC详解
+  - SpringBoot开发
+    - SpringBoot入门
+    - SpringBoot集成
+    - SpringBoot进阶
+  - Spring Cloud开发
+    - Spring Cloud
+    - Spring Cloud alibaba
+    - Spring Cloud tencent
+  - Spring响应式编程
+    - SpringBoot Reactive
+  - Spring原生编程
+    - SpringBoot Native
+  - Spring Security
+  - Spring Flo
+  - Spring One
+- **架构和系统设计**
+  - 架构基础
+  - 分布式架构
+  - 微服务系统
+    - 微服务原理和设计
+    - Service Mesh
+      - K8S + istio
+  - 常见系统设计
+    - 常见商业平台设计
+    - 数据仓库平台设计
+    - 大数据处理
+      - 数据采集
+      - 数据处理
+        - ETL
+          - Kettle
+      - 数据集成
+        - https://blog.csdn.net/qq_43958467/article/details/89536173
+      - 数据治理
+- **开源项目学习**
+  - Ruoyi
+  - Jeecgboot
+  - xxx
+  - SpringCloud项目实践
+  - SpringCloud alibaba项目实践
+  - DDD项目实践
+- **敏捷开发和DevOPS**
+  - 开发工具
+    - 工具清单
+    - IDEA
+    - Git工具
+    - Maven工具
+  - 部署环境
+    - Linux
+    - Docker
+    - K8S
+    - AWS
+    - Azure
+  - DevOps
+    - CI/CD
+    - Gitlab技术栈
+    - Jenkins技术栈
+- **开发理论**
+  - 开发理论
+    - SOLID
+    - ACID
+    - CAP
+    - BASE
+    - 康威定律
+  - 开源协议
+    - 常见的开源协议详解
+    - 共享文本协议
+    - 国产开源：木兰协议
+  - 代码规范
+    - 阿里巴巴Java开发手册
+    - Twitter java code style
+    - Goolge java code style
+  - 开发流程
+    - 软件生命周期和经典瀑布模式
+    - 测试软件模式
+    - 敏捷软件开发理论及流程
+    - 敏捷开发之XP极限编程
+    - 敏捷开发之SCRUM
+    - 敏捷开发之kanban
+    - TDD 测试驱动开发
+    - DDD 领域驱动开发
+    - 经典的开发流程
+
+### 主页上分模块
+
+- **Java基础和进阶**
+  - 面向对象基础
+  - Java基础语法
+  - Java集合框架
+  - Java IO框架
+  - Java并发框架
+- **Java版本和特性**
+  - Java 8版本特性
+- **JVM和底层技术**
+  - 类加载机制
+  - 字节码技术
+  - 内存结构详解
+  - 垃圾回收技术
+  - 调试排错相关
+- **数据结构和算法**
+  - 数据结构基础
+  - 排序算法
+  - 算法思想
+- **数据库理论和技术**
+  - 数据库原理
+  - 数据库SQL语言
+  - MySQL数据库详解
+  - Redis数据库详解
+  - ElasticSearch数据库详解
+- **开发基础相关**
+  - 常用公共类库
+  - 正则表达式
+  - CRON表达式
+  - 单元测试和代码质量
+  - 开发安全相关
+  - 网络安全相关
+  - 重构相关
+- **框架和中间件**
+  - Web容器 - Tomcat详解
+  - ORM框架 - MyBatis详解
+  - 分库框架 - ShardingSphere详解
+- **Spring框架详解**
+  - Spring框架基础
+  - Spring IOC详解
+  - Spring AOP详解
+  - Spring MVC详解
+- **SpringBoot开发和功能集成**
+- SpringBoot Reactive
+- SpringBoot Navtive
+
+### 技术路线
+
+- **入门路线：Java 零基础入门**
+
+  - Java入门基础
+  - SpringBoot应用程序开发 + 后端模板引擎
+    - 前端技术基础
+    - SpringBoot应用开发，后端模板引擎
+  - SpringBoot应用程序开发 + 前端技术栈
+    - 前端技术栈
+    - 后端技术栈
+  - SpringCloud微服务开发
+    - 服务开发
+  - 项目开发的流程
+- **进阶路线：Java 开发进阶**
+
+  - SpringBoot集成各种业务的开发
+  - Spring Cloud微服务开发
+- **架构路线：后端架构技术栈**
+- **延伸开发：顺手学其它技术栈**
+
+  - Java开发者学VueJS
+  - Java开发者学Python
+  - Java开发者学Golang
+  - Java开发者学区块链
+  - Java开发者学xxx
+- **技术之外：人，团队，产品，生活**

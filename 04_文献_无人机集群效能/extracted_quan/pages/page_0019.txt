@@ -1,0 +1,68 @@
+System-of-systems effectiveness evaluation of UAV swarm: A data-driven perspective 19
+system configuration may require full retraining rather than skew, and the active learning-based sample selection strategy,
+fine-tuning. The model’s performance depends heavily on the iRDM-RGS. For the evaluation model, comparative experi-
+similarity between the source and target domains. In future ments with recent machine learning and deep learning baseli-
+work, we plan to expand the model’s representational capacity nes, as well as ablation studies on the key module, have
+by incorporating a broader range of SoS features and intro- demonstrated its superior effectiveness on accuracy and in
+ducing domain adaptation techniques to enhance generaliza- relieving the overestimation of system effectiveness in reflect-
+tion across diverse operational environments. ing the demands. These results confirm the model’s ability to
+capture the complex relationships among SoS indicators. For
+6.5.2. Sensitivity analysis for weight combinations the active learning strategy, extensive validation shows that
+To further verify the robustness of the SoS effectiveness calcu- the iRDM-RGS method effectively reduces the number of
+lation method in Eq. (2), a sensitivity analysis of the weight required labeled samples while maintaining model perfor-
+allocation between task completion rate x and disabled mance, thereby improving annotation efficiency and reducing
+1
+degree x is conducted. The weighting factor represents the rel- simulation costs.
+2
+ative importance assigned to these two aspects, which can be Application experiments further verify that the proposed
+adjusted according to decision-maker preferences or mission- framework can not only evaluate the effectiveness of UAVS
+specific priorities. Specifically, five combinations of weights but also guide SoS configuration optimization. Finally, trans-
+x and x are set and applied to train the ResNet-Skew model, fer learning and sensitivity analyses confirm the model’s gener-
+1 2
+indicating different emphasis levels on the two factors. The alization ability across different task scenarios and its
+Data-driven SEE model is evaluated under these settings using robustness to varying evaluation weight preferences. Overall,
+the same 1000 training data, which contains different UAVS these comprehensive experiments validate both the effective-
+and target configurations. The statistical results of RMSE ness and practical applicability of the proposed method.
+are recorded for comparison in Table 13.
+The results show that the model’s prediction performance 7. Conclusions
+remains stable across different weight settings, reflecting the
+intended effect of adjusting the weight coefficients. The model This paper aims to evaluate the SoS effectiveness of UAVS
+performs best when the weights for task completion rate and from a Data-driven perspective. This goal has been success-
+disabled degree are balanced (0.5:0.5), achieving the lowest fully achieved by proposing a novel Data-driven SEE frame-
+RMSE and MAE. In contrast, heavily biased weights (1:0 or work that can efficiently evaluate the effectiveness of UAVS.
+0:1) lead to relatively higher errors, indicating that emphasiz- In this framework, a deep learning-based evaluation network
+ing only one factor reduces prediction accuracy. This suggests called ResNet-Skew is designed as the mainframe to perform
+that a combined weighting provides richer information for the the evaluation. In this evaluation network, SoS indicators
+model to learn the relationship between indicators and SoS are transformed to conform to the following ResNet structure.
+effectiveness. The chosen setting of 0.8:0.2, prioritizing task A skewed loss function is adopted to relieve the overestimation
+completion, also achieves low error, demonstrating a good of the sample based on the actual application demand of the
+trade-off between accuracy and mission-specific needs. This UAVS system. Besides, to reduce the high cost of
+weighting is based on actual task requirements and expert rec- simulation-based annotation, an active learning strategy
+ommendations, where completing the mission is considered iRDM-RGS is proposed to select high-value samples from
+more critical than system survivability in the evaluated UAVS large-scale unlabeled samples for training the ResNet-Skew
+scenario. Meanwhile, the low standard deviations across all model. The experiments show that the proposed evaluation
+settings confirm the model’s stability and robustness under dif- network and active learning strategy can outperform the
+ferent weighting preferences. state-of-the-art algorithms for SEE problems. The ablation
+This demonstrates that the SEE model is robust against experiments’ results showed that the corresponding modules
+moderate changes in decision-making preferences, allowing of the Data-driven SEE framework are effective. Further
+flexibility to accommodate different mission requirements experiments also show that the proposed framework can have
+without compromising predictive reliability. potential applications in the analysis and optimization of the
+UAVS system. Overall, the Data-driven SEE model can
+6.6. Overall experimental summary quickly, precisely, and efficiently evaluate the effectiveness of
+UAVS.
+The proposed Data-driven SEE evaluation model consists of
+two main components: the evaluation network, ResNet- CRediT authorship c ontribution statement
+Table 13 Statistical results for weight combinations. Wei QUAN: Writing – original draft, Visualization, Valida-
+tion, Software, Methodology, Investigation, Formal analysis,
+x :x RMSE MAE
+1 2
+Conceptualization. Chen CHEN: Writing – review & editing,
+Mean Std (10 3) Mean Std (10 3 )
+Supervision, Project administration, Methodology, Investiga-
+1:0 0.082 1.75 0.057 2.14 tion, Funding acquisition, Conceptualization. Fang DENG:
+0.8:0.2 0.073 2.02 0.055 1.31 Writing – review & editing, Supervision, Investigation, Fund-
+0.5:0.5 0.065 1.22 0.051 5.89 ing acquisition, Conceptualization. Bin XIN: Writing – review
+0.2:0.8 0.071 2.16 0.052 1.88
+& editing, Supervision, Investigation, Funding acquisition,
+0:1 0.079 0.87 0.061 0.40
+Conceptualization.

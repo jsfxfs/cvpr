@@ -1,0 +1,60 @@
+System-of-systems effectiveness evaluation of UAV swarm: A data-driven perspective 15
+Table 7 Statistical results for active learning strategies under different sample sizes.
+Strategy RMSE
+Sample size = 200 Sample size = 400 Sample size = 600 Sample size = 800 Sample size = 1000
+Mean Std (10 3 ) Mean Std (10 3) Mean Std (10 3) Mean Std (10 3 ) Mean Std (10 3 )
+iRDM-RGS 0.117 2.67 0.093 3.14 0.080 2.66 0.077 1.98 0.073 2.02
+GSx 0.121(+) 4.32 0.106(+) 1.92 0.085(+) 2.70 0.083(+) 2.68 0.077(+) 4.10
+iRDM 0.117(+) 5.87 0.099(+) 2.01 0.087(+) 2.78 0.085(+) 2.95 0.078(+) 4.09
+RD 0.117(+) 5.43 0.097(+) 3.72 0.093(+) 2.94 0.080(+) 2.92 0.079(+) 3.25
+RS 0.127(+) 5.95 0.106(+) 4.04 0.095(+) 2.00 0.090(+) 2.81 0.081(+) 2.21
+ple annotations in the process. This demonstrates the method’s
+efficiency in minimizing sample labeling efforts while maintain-
+ing model performance.
+To evaluate the computational cost of different active
+learning sampling strategies, a time comparison experiment is
+conducted involving all five methods. Each method is executed
+to select 1000 samples from the unlabeled dataset. In addition,
+the total simulation labeling time for these 1000 samples is
+measured to provide a reference for the overall SEE workflow.
+The results are summarized in Table 8.
+As shown in Table 8, the proposed iRDM-RGS algorithm
+requires about 67 s to select 1000 samples. Owing to the
+cluster-based method requiring multiple k-means processes,
+which is more time-consuming than the greedy-based method,
+Fig. 9 Performance of active learning methods under different
+iRDM-RGS costs more time than simpler methods such as RS
+selection sample sizes.
+and GSx. Furthermore, its sampling time is significantly lower
+than the full cluster-based method (iRDM and RD), demon-
+precise subset of samples with high representativeness, and strating improvement of computational efficiency by introduc-
+then RGS, a greedy sampling approach, is applied to the ing the RGS strategy.
+remaining samples. This combination of representativeness Moreover, although costing much time than RS and GSx,
+and diversity allows the iRDM-RGS method to maintain the influence of time spent on sample selection of iRDM-
+robust performance even as the number of annotated samples RGS is negligible compared to the 10 h required by the
+increases. simulation-based labeling process, even with parallel comput-
+Furthermore, to demonstrate the practical impact of active ing resources. iRDM-RGS accounts for less than 0.2 % of
+learning methods, we compare the RMSE performance of the total data preparation time, ensuring that the additional
+selecting 800 and 1000 samples by using RS as a baseline computational cost does not hinder the overall efficiency of
+and calculate the number of samples required for different the SEE framework.
+active learning methods to achieve the same RMSE value. These results confirm that the proposed iRDM-RGS strikes
+The results are shown in Fig. 10. While Fig. 9 illustrates the a good balance between sampling quality and computational
+performance trends of different models across a full range of cost, making it practical for real-world UAVS effectiveness
+sample sizes, Fig. 10 aims to reflect the sample-saving benefits evaluation scenarios.
+of active learning methods more intuitively. By comparing per-
+formance at 800 and 1000 samples, where models generally
+converge, we highlight how certain approaches can achieve
+comparable accuracy with fewer labeled instances. This offers
+a practical perspective on sample efficiency near the upper
+limit of model performance.
+Compared to the performance of randomly selecting 800
+samples, the iRDM-RGS method only requires 460 samples
+to achieve the same result, reducing the number of required
+samples by 42 %. This reduction significantly lowers the time
+and costs associated with obtaining labeled simulation sam-
+ples, making model training more efficient. In comparison,
+other active learning methods require 540, 540, and 700 sam-
+ples to match the performance of 800 random samples. Addi-
+tionally, when compared to the random selection of 1000
+samples, the iRDM-RGS method still requires only 58 % of Fig. 10 Comparison of required sample number of different
+the samples to achieve the same performance, saving 420 sam- methods.

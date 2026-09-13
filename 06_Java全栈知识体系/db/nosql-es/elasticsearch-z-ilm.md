@@ -1,0 +1,1 @@
+# ES详解 - 运维：ElasticSearch索引生命周期管理（ILM)

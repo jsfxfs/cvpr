@@ -1,0 +1,47 @@
+Chinese Journal of Aeronautics, (2026), 39(8): 103848
+Chinese Society of Aeronautics and Astronautic s
+& Beihang University
+Chinese Journal of Aeronautics
+cja@buaa.edu.cn
+www.sciencedirect.com
+FULL LENGTH ARTICLE
+System-of-systems effectiveness evaluation of UAV
+swarm: A data-driven perspective
+Wei QUAN a,b , Chen CHEN a,b,*, Fang DENG a,b, Bin XIN a,b
+a School of Automation, Beijing Institute of Technology, Beijing 100081, China
+b The National Key Lab of Autonomous Intelligent Unmanned Systems, Beijing 100081, China
+Received 30 April 2025; revised 2 June 2025; accepted 28 August 2025
+Available online 28 September 2025
+KEYWORDS Abstract System-of-Systems Effectiveness Evaluation (SEE) is crucial for systematically assessing
+Unmanned Aerial Vehicle Swarms (UAVS). However, due to the strong nonlinear, hierarchical,
+Active learning;
+Data-driven; and emergent characteristics of UAVS, traditional SEE methods based on experience and mathe-
+Deep learning; matical analysis are challenging to apply to such complex systems. In this article, we propose a
+Effectiveness evaluation; Data-driven SEE framework that leverages deep learning to establish the relationship between
+System-of-systems; system-of-systems indicators and effectiveness, effectively capturing the complex characteristics of
+Unmanned aerial vehicle UAVS. The system-of-systems indicators are first transformed by two-dimensional loop stacking
+and then processed by a residual neural network-based evaluation network. Furthermore, to
+address the practical need to mitigate overestimation in effectiveness evaluation, a skewed loss func-
+tion is designed to adjust overestimation during the training process. Since training a Data-driven
+model requires a large number of labeled samples, which are obtained through time-consuming
+simulation-based annotation, we develop an active learning strategy based on cluster iteration
+and random greedy sampling. This strategy selects a limited number of high-value samples for sim-
+ulation labeling while maintaining model accuracy. The experimental results demonstrate that this
+model can quickly, accurately, and efficiently evaluate the effectiveness of unmanned swarm sys-
+tems. Additionally, the data-driven SEE framework shows strong potential for UAVS system anal-
+ysis and optimization.
+© 2025 The Author(s). Published by Elsevier Ltd on behalf of Chinese Society of Aeronautics and
+Astronautics. This is an open accessarticleunderthe CCBY-NC-NDlicense(http://creativecommons.org/
+licenses/by-nc-nd/4.0/).
+1. Introduction
+* Corresponding author at: School of Automation, Beijing Institute
+of Technology, Beijing 100081, China. With the rapid progress in unmanned system techniques and
+E-mail address: xiaofan@bit.edu.cn (C. CHEN). swarm intelligence, Unmanned Aerial Vehicle Swarm (UAVS)
+Peer review under responsibility of Editorial Committee of CJA. has gained widespread applications in industrial, emergency
+problems, and military.1–3 System-of-Systems (SoS) effective-
+ness refers to the degree to which a system can achieve its
+intended goals under complex conditions during specific
+Production and hosting by Elsevier tasks,4 making it a crucial factor in the development of
+https://doi.org/10.1016/j.cja.2025.103848
+1000-9361 © 2025 The Author(s). Published by Elsevier Ltd on behalf of Chinese Society of Aeronautics and Astronautics.
+This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/).

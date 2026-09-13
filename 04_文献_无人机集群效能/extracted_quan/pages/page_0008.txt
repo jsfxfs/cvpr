@@ -1,0 +1,73 @@
+8 W. QUAN et al.
+in critical missions, where failure due to underperformance
+may lead to catastrophic outcomes. On the contrary, when
+the predicted effectiveness is lower than the actual effective-
+ness, the system may be overly cautious, but the consequences
+are generally less severe. Underestimation typically leads to
+inefficiencies or suboptimal performance, without the high-
+risk potential associated with overestimating system
+capabilities.
+In real-world applications, particularly in UAVS tasks, the
+cost of failure resulting from overestimation is far more dam-
+aging than the inefficiencies caused by underestimation.
+Unfortunately, standard prediction models do not account
+for these critical differences in how various types of prediction
+errors impact system performance. To address this issue, we Fig. 4 Loss curve of skewed Huber loss with effectiveness label
+modify the Huber loss function by introducing a skewed loss 0.5.
+function. This adjusted function places greater emphasis on
+pronounced, as observed in the right-hand side of the loss
+cases where the predicted effectiveness exceeds the actual effec-
+function. This adjustment mitigates the adverse effects of over-
+tiveness, thus reducing the likelihood of deploying systems
+estimated predictions on decision-making.
+with overly optimistic predictions that could result in task fail-
+The skewed loss maintains the robustness of the Huber for-
+ure. The skewed loss function is defined as
+mulation (i.e., quadratic loss for small errors and linear loss for
+ek 2d f x i y i d2 d f x i y i large ones), while adding directional sensitivity through k . This
+ek f x y 2 0 f x y 6 d provides a flexible, interpretable, and tunable loss function
+L SL e k f x i y i 2 d i f x i y 6 0 6 that aligns optimization objectives with real-world safety and
+i i i i robustness needs in UAVS systems. As shown in Section 6.5,
+e k 2d f x i y i d2 f x i y i 6 d increasing k leads to a consistent reduction in overestimation
+where k represents a penalty adjustment parameter, with a bias, while maintaining comparable RMSE. This demonstrates
+the practical effectiveness of the skewed loss in balancing per-
+value range of [0,1].
+formance accuracy with risk sensitivity. Section 6.5 will discuss
+This modified loss function dynamically adjusts its magni-
+tude based on the parameters d and ek . The loss function is the effect of skewed loss in detail.
+The residual-based evaluation network and the skewed loss
+divided into four segments based on the prediction error.
+function module together form the ResNet-Skew SEE frame-
+When the model’s predicted value exceeds the actual label, a
+higher penalty weight ek is applied, as illustrated in the first work of UAVS. This model enables rapid and accurate predic-
+tions of SoS effectiveness and adapts to the real-world
+two cases of Eq. (6). In contrast, when the predicted value is
+demands of UAVS tasks.
+lower than the actual value, a smaller penalty weight e k is
+used, with the switching behavior of the MSE and MAE loss
+functions still governed by d. The latter two cases of Eq. (6) 5. Active learning for sample selection
+correspond to this scenario. Notably, when k 0, the expo-
+nential weights reduce to 1 and the loss becomes equivalent Training a Data-driven SEE model requires a large amount of
+to the standard Huber loss, which treats overestimation and labeled data. However, obtaining effectiveness values for
+underestimation symmetrically. UAVS with different indicators via simulations is both time-
+The proposed skewed loss is a risk-aware generalization of consuming and costly. Therefore, it is crucial to minimize
+Huber loss, where k controls the degree of asymmetry in penal- training costs by selecting high-value samples. Active learning
+izing overestimation. This design is motivated by the asymmet- offers a solution by selecting the most informative samples
+ric risk in UAVS mission, where overestimation of from an unlabeled dataset for annotation, thus reducing the
+effectiveness can result in mission failure, while underestima- overall number of required annotations during training.46 By
+tion typically leads to conservative but safer decisions. Tradi- incorporating active learning into the SEE framework, we
+tional symmetric losses like MSE or Huber do not capture can effectively reduce sample annotation cost.
+this risk profile. The skewed loss is theoretically supported
+by cost-sensitive learning and quantile regression,45 which
+introduce asymmetry into learning objectives to reflect real-
+world decision priorities.
+Fig. 4 illustrates the impact of varying the k parameter on
+the skewed loss function at an actual effectiveness value of
+0.5. The dashed line represents the loss function values using
+the original Huber loss, while the other curves show the
+skewed loss function with different values of k. On all curves,
+the gradient decreases as the error diminishes and stabilizes at
+larger errors, allowing for variable gradient strategies based on
+the error magnitude. As k increases, the penalty for samples
+with predicted values above the actual values becomes more
+Fig. 5 Application process of active learning method in SEE.

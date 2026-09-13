@@ -1,0 +1,195 @@
+System-of-systems effectiveness evaluation of UAV swarm: A data-driven perspective 9
+5.1. Framework of active learning
+Algorithm 1. Main framework of iRDM-RGS.
+The active learning framework is shown in Fig. 5. Initially, an
+O O O O
+Input: Unlabeled sample sets: , Number of
+1 2 K
+unlabeled set of SoS indicator samples is generated. The active
+the unlabeled samples: K, Budget of sample selection: M,
+learning method evaluates each sample’s value and selects the
+Iteration number: G , Number of sample selected by iRDM: N.
+max
+Output: Training dataset with label.
+most informative ones. These high-value samples are then
+O
+(N
+1. Perform K-means cluster to classes), each cluster center
+annotated by calculating their SoS effectiveness using the sim-
+C C C C
+would be denoted as .
+ulation system. As a result, only a small portion of the total
+p p1 p2 pN
+2. Select the sample closest to each center as the candidate set
+sample space is used, reducing annotation costs while ensuring
+O O O O
+.
+c c1 c2 cN
+good model generalization.
+g
+3. 0.
+The problem of selecting initial sample annotations is a
+g G
+4. for do
+max
+sample selection issue within unsupervised learning. Sample
+O O
+5. for in do
+cl c
+selection in active learning typically focuses on two criteria:
+O
+6. Replace the sample with the sample behavin g the
+cl
+diversity.47
+representativeness and Representativeness ensures
+highest value according to Eq. (9).
+that the selected samples reflect the entire sample space, while
+7. end for
+diversity ensures that samples are evenly spread across the g g
+8. 1.
+9. end for
+space and not clustered in a limited region. These criteria are
+O
+10. Taking samples in as the foundation, select the remain
+critical in selecting initial samples for training the neural
+c
+X x x x
+M N
+samples through the
+network.
+r N N M
+1 2
+random greedy sampling strategy (Algorithm 2).
+Given the complexity of both the UAVS system and the
+11. Receive the finally selected sample sets
+neural network framework, the initial sample size required
+X O X x x x
+.
+c r 1 2 M
+for this problem is larger than traditional active learning
+X
+12. Simulate the sample in to receive the effectiveness Y.
+regression tasks, ranging from hundreds to thousands of
+D x x x
+13. y y y .
+return
+1 2 M
+1 2 M
+instances. Therefore, we propose an unsupervised active learn-
+ing strategy, iRDM-RGS, designed to handle large-scale sam-
+ple selection. This strategy utilizes both representativeness and
+To improve both representativeness and diversity of the
+diversity criteria and is based on iterative Representativeness-
+O
+selected samples from the candidate set , this study applies
+c
+(iRDM)47
+Diversity Maximization
+and random greedy sam-
+the iRDM method to update samples within each cluster, as
+pling, as detailed in Algorithm 1.
+described in lines 4 through 9 of Algorithm 1. The selection
+O,
+For the initial unlabeled dataset the proposed iRDM-
+C
+of representative samples within cluster is guided by both
+l
+RGS algorithm first selects a few representative and
+diversity and representativeness criteria. The representative-
+diversity-based samples using the iRDM method (lines 1–9).
+ness of a sample is measured by its average distance to other
+Subsequently, the algorithm employs a random greedy strategy
+C x
+samples in the same cluster. For a cluster
+l 1
+grounded in diversity criteria (Algorithm 2) to select the
+x x
+, P is the number of samples in this cluster. The
+Pl l
+2
+X.
+remaining samples, culminating in the final sample set After
+x
+representativeness score of the sample is calculated as
+i
+the sample selection is complete, the algorithm calculates the
+1
+Y
+effectiveness label values for the sample set using the UAVS
+x x x
+R 7
+i i k
+P
+1
+simulation system, ultimately yielding a labeled dataset of SoS
+l
+x C
+k l
+D x x x
+indicators y y y for deep learn-
+1 2 M
+M
+1 2
+The diversity criterion evaluates the minimum distance
+ing model training. The following sections will detail the two
+x C
+from each sample in cluster to the representative samples
+main modules of this algorithm: the iRDM based initial sam-
+i l
+O
+in other clusters, as
+ple selection and the random greedy sampling strategy.
+ck
+x x O
+D
+min
+8
+k N
+i 1 i ck
+5.2. iRDM based initial sample selection
+k–l
+To simultaneously enhance both diversity and representa-
+O,
+For the initial unlabeled dataset the algorithm first applies
+tiveness, we maximize inter-cluster diversity score while mini-
+K-means clustering to initially select samples that are highly
+mizing the intra-cluster representativeness score. For each
+C x x
+representative and diverse. Clustering, a frequently used
+R D
+sample in cluster , we calculate and , and select
+l i i
+x
+method in active learning, can identify samples that are both
+the optimal sample in cluster C using the following formula:
+j
+i
+diverse.12
+representative and The number of clusters is critical
+x x x
+arg max D R 9
+i 1 Pl i i
+i
+for the sample selection process in clustering algorithms.
+O x
+Choosing a large number of clusters may lead to local optima The selected sample in the cluster is then replaced with ,
+cl
+i
+instead of global optima, complicating the algorithm’s search
+and the update is performed for all samples within the cluster.
+for the true clustering structure. Given the large sample size
+This selection process is illustrated in Fig. 6(a). A, B, and C
+in the SEE problem, the algorithm sets the number of clusters
+represent candidate points within each cluster. During the iter-
+to N = 200, assuming the maximum number of labeled sam-
+ation, each point in the cluster is assessed according to the for-
+M
+ples is between 200 and 1000. Within each cluster, the sam-
+D’s
+mula in Eq. (9). For example, point representativeness
+x
+ple closest to the center is chosen as the candidate to represent
+score R is calculated by measuring its average distance
+D
+the cluster.
+to other points in the cluster, shown by three short dashed

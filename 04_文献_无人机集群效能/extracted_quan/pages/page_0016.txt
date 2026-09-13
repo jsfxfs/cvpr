@@ -1,0 +1,69 @@
+16 W. QUAN et al.
+6.4. Utility analysis of Data-driven SEE framework
+Table 8 Computational time for active learning strategies.
+Strategy Sampling time (s) Labeling time (h)
+To further validate the practical utility of the Data-driven SEE
+iRDM-RGS 67 Framework, this section will employ the framework on some
+GSx <1 actual instances of the established mission of UAVS.
+iRDM 195 >10
+RD 8500
+6.4.1. Data-driven SEE for evaluation and analysis
+RS <1
+To demonstrate the application of the Data-driven SEE
+model, we evaluate the effectiveness of four different UAVS
+SoS instances. Their SoS indicators and evaluation results
+are summarized in Table 10.
+The four instances are evaluated using the Data-driven SEE
+framework. The predicted effectiveness is closely aligned with
+6.3.3. Model structure validation and analysis
+the actual simulation results, confirming the model’s predictive
+This section presents ablation studies to validate and analyze accuracy. By including the target vehicle’s SoS indicators, the
+the efficacy of the two primary modules in the proposed algo- framework allows for evaluation across multiple task types,
+rithm: iRDM and RGS. These modules are compared as stan-
+enhancing its application versatility.
+dalone active learning methods against the combined iRDM- When comparing the instances, it is evident that higher-
+RGS algorithm. Additionally, to fully evaluate the impact of performing UAVS, like the second instance (No. 2), outper-
+the randomness introduced by RGS, a comparison is made
+form lower-performance systems (No. 1) in the same mission.
+with the non-random version of the greedy algorithm, GSx. However, this performance improvement comes with an
+The mean and standard deviation results are summarized in increased cost. Comparing No. 2 and No. 3, the UAVS setup
+Table 9.
+is held constant, while the target vehicles’ quantity and speed
+The iRDM-RGS method, by integrating both the iRDM
+increase. The resulting drop in effectiveness demonstrates that
+and RGS modules, significantly enhances performance com- task context alone can significantly affect system performance.
+pared to using either module individually. As seen from the Finally, from No. 3 to No. 4, task difficulty (targets’ parame-
+results, the RGS algorithm, which incorporates randomness
+ters) remains unchanged, but the quantity and ability of com-
+through probability selection, helps the model avoid local munication UAV is increased. Such enhancement facilitates
+optima, leading to better performance than the GSx algo- the system’s communication and networking ability, thereby
+rithm, which lacks this randomness. However, when RGS
+enhancing the effectiveness of UAVS. These controlled com-
+is used alone, its performance is still slightly inferior to parisons collectively support that SoS effectiveness is jointly
+the iRDM-RGS algorithm due to its limited impact on shaped by both system capability and task-specific contextual
+the initial sample selection process. In contrast, the
+factors. SoS indicators of UAVS must be tailored to the speci-
+iRDM-RGS method combines the strengths of both mod-
+fic task requirements.
+ules. The iRDM algorithm first selects an optimal set of
+initial samples, ensuring a strong foundation for the model.
+Then, the RGS module applies random greedy sampling to 6.4.2. Data-driven SEE framework for optimization
+these selected samples, enhancing early-stage sample selec- Building upon the insights gained from the previous evaluation
+tion and promoting better diversity and representativeness. experiment, the Data-driven SEE model can also be applied to
+This synergy of the iRDM and RGS modules results in a optimize the UAVS system for improved effectiveness and
+more efficient selection process, maximizing the value of reduced costs. The proposed Data-driven SEE framework
+the selected samples and boosting the overall performance not only allows for evaluating the effectiveness of UAVS sys-
+of model training. tems but can also be applied to optimize their performance.
+The ablation results clearly demonstrate that the iRDM- Optimization typically requires running simulations, which is
+RGS approach, by focusing on high-value unsupervised sam- computationally expensive. However, by using the Data-
+ples, significantly reduces the number of required simulation driven model to evaluate effectiveness, we can accelerate the
+annotations. This reduction in labeling efforts not only lowers optimization of UAVS SoS indicators.
+simulation costs but also improves the efficiency of SEE model In this optimization problem, the effectiveness and SoS
+training for UAVS. configuration cost of UAVS are set as objectives, with SoS
+Table 9 Statistical results for different model structures.
+Strategy RMSE MAE
+Mean Std (10 3) Mean Std (10 3)
+iRDM-RGS 0.073 2.02 0.055 1.31
+RGS 0.076(+) 3.03 0.057(+) 3.35
+iRDM 0.078(+) 4.09 0.059(+) 4.10
+GSx 0.077(+) 4.10 0.059(+) 3.85

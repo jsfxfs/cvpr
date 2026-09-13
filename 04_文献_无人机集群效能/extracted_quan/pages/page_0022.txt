@@ -1,0 +1,6 @@
+22 W. QUAN et al.
+48. Vaswani A, Shazeer N, Parmar N, et al. Attention is all you 50. Wu DR. Pool-based sequential active learning for regression.
+need. 2017 the 31st international conference on neural information IEEE Trans Neural Netw Learn Syst 2019;30(5):1348–59.
+processing systems. 2017. p. 6000–10. 51. He SB, Shi K, Liu C, et al. Collaborative sensing in Internet of
+49. Wu DR, Lin CT, Huang J. Active learning for regression using Things: a comprehensive survey. IEEE Commun Surv Tutor
+greedy sampling. Inf Sci 2019;474:90–105. 2022;24(3):1435–74.

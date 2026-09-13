@@ -1,0 +1,52 @@
+6 W. QUAN et al.
+Fig. 2 Data-driven SEE framework for UAVS.
+sists of three components. First, a feature transformation wise to form a structured 2D matrix. Compared to direct
+method based on loop stacking is introduced to convert the duplication or stacking, this method increases the effective
+SoS indicators of UAVS into a two-dimensional format. Next, receptive field, enabling the CNN to learn richer feature rela-
+convolutional and residual structures, along with fully con- tionships without increasing input dimensionality or requiring
+nected layers, are employed to extract relevant information explicit spatial encoding. In this SEE problem, the original 12
+and calculate the effectiveness value. Additionally, to better SoS features are transformed to 12 12 feature map and then
+align Data-driven models with real-world applications, this are processed by convolutional architectures, allowing for the
+study designs a skewed loss function to relieve overestimated exploration of feature correlations and uncovering deep inter-
+predictions during training. Detailed descriptions of each mod- connections between features.
+ule will follow. To clearly illustrate the advantages of the loop stacking
+method in processing 2D system indicator features, a compar-
+4.2. Residual-based evaluation network ison is conducted between this method and the direct stacking
+method in Fig. 3, highlighting the differences in processing
+Deep learning methods are highly effective at simulating and
+one-dimensional data with five features. Fig. 3(a) shows the
+fitting complex systems, but they are typically applied to
+illustration that a 3 3 convolution structure is applied to
+multi-dimensional data. In SEE, the SoS indicators are one- the indicators processed by different stacking methods.
+dimensional, necessitating a mechanism to transform indica-
+Fig. 3(b) shows the times of each indicator that this convolu-
+tors into a suitable format. Transforming one-dimensional
+tion can include. Features processed by the loop stacking
+data into two-dimensional structures has been widely used to method can simultaneously operate on five features in one ker-
+leverage the strong representation capabilities of convolutional
+nel. Conversely, the direct stacking convolution structure can
+neural networks in domains where data lacks inherent spatial
+only extract and process information from three adjacent ele-
+organization. Prior works in transformed one-dimensional ments. The loop stacking can effectively extract the interre-
+lated information, enhancing the field of view without
+learning domains have shown that reshaping or projecting
+altering the convolution kernel size, thus yielding more valu-
+1D vectors into 2D indicators allows CNNs to better capture
+local patterns and feature interactions.41,42 When the number able insights and more comprehensively unveiling the interre-
+lationships among factors.
+of features is large, simple reshaping can create sufficiently rich
+2D layouts for convolution. However, in scenarios like our
+To extract potential information and interrelations among
+SEE task, where the SoS indicator vector contains 12 features,
+the two-dimensional features, a SEE model based on the
+such reshaping is limited in its ability to provide enough space. ResNet network43 is utilized as the backbone to predict the
+Therefore, a stacking-based transformation can be employed
+effectiveness of UAVS. ResNet model’s structure is selected
+to construct a two-dimensional structure suitable for
+and modified for its ability to handle deeper architectures while
+convolution. preserving important information through residual connec-
+tions, which mitigates the vanishing gradient problem. Its con-
+To address this, we propose a loop stacking approach that
+volutional layers are capable of extracting both local and
+performs cyclic shifts of the original feature vector, generating
+a series of rotated variants. These indicators are stacked row- global patterns from the transformed bi-dimensional data,

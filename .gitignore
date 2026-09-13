@@ -1,0 +1,9 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# IDE 自动生成的 HTML 分享包缓存（可再生，非内容资产）
+.trae-html-share-packages/
+
+# 爬虫下载的 PDF 语料（体积大，需要时用 run_cvpr.py --pdf-topic 重新下载）
+**/pdfs/

@@ -1,0 +1,87 @@
+10 W. QUAN et al.
+After clustering iteration yields the sample set O , this algo-
+c
+rithm tallies the remaining samples into R and chooses M N
+samples from this set. This approach is conceptually similar to
+a subset selection problem, which can be tackled using models
+and solution strategies from the latter. According to the prin-
+ciple of subset selection, we aim to include samples that are
+more distant from the existing set, thus broadening the sample
+space. However, solving this problem with exact optimization
+methods is computationally expensive, particularly for large-
+Fig. 6 Selection rules of iRDM-RGS. scale datasets. To address this, the algorithm employs a greedy
+approach to iteratively select samples.
+lines. Additionally, the distance from D to B measures the
+For each sample point x in R, the distance to the currently
+diversity D x D , indicating the minimal distance to other clus- selected set O is computed, i with the minimum distance being
+ter centers. The combined evaluation of these two metrics c
+used as the selection criterion. The minimum distance is calcu-
+determines whether point D should replace the old selected
+lated as
+sample point C.
+To ensure the stability of the sample updates, the aforemen- C x i minx j O c D x i x j 10
+tioned method is iterated G times. The updated sample set
+max A greater minimum distance indicates that the sample is
+O O O O is obtained. Based on this dataset, a
+c c1 c2 cN more distant from the distribution space of O , thus enhancing
+random greedy strategy based on diversity criteria would be c
+diversity. Normally, a greedy optimization would select the
+further employed to select the remaining samples.
+sample with the maximum C x to add to the set O . This
+i c
+selection criterion can be represented as
+5.3. Random greedy sampling strategy
+u argmaxx
+i
+RC x
+i
+11
+After applying the iRDM method, the sample set O c consists However, greedy methods are highly sensitive to the initial
+of N selected samples, leaving M N samples unselected. To sample selection, and inappropriate initial samples can lead the
+further enhance the diversity of the selected samples and algorithm to local optima. To mitigate this, a randomized
+ensure a broad representation of the sample space, we intro- greedy approach is introduced. Rather than deterministically
+duce the Random Greedy Sampling (RGS) strategy. This choosing the sample with the maximum distance, a probability
+strategy combines greedy selection with randomness, as is assigned to each sample based on its distance. This proba-
+described in Algorithm 2. iRDM primarily focuses on selecting bilistic approach reduces the likelihood of the algorithm
+a small number of highly representative samples, and the RGS becoming stuck in local optima. The probability is calculated
+strategy aims to enhance the diversity of the sample set by as
+selecting additional samples that are distant from those already
+M N
+chosen, thereby ensuring broader coverage of the sample p C x c C x c 12
+space. This shift in focus allows RGS to complement iRDM i i j
+j 1
+by filling the gaps left by the representativeness-driven initial
+where c is a greediness control parameter. When c 0, all sam-
+selection, thus optimizing the overall sampling process.
+ples have an equal probability of being selected, while increas-
+Algorithm 2. Random greedy sampling strategy. ing c skews the probability towards samples with larger
+distances. As c approaches infinity, the model closely approx-
+Input: Unlabeled sample sets: O O O O , Sample
+1 2 K imates pure greedy selection.
+selected by iRDM: O O O O , Budget of sample
+c c1 c2 cN Using this probabilistic model, the roulette wheel method is
+selection in RGS: M N.
+Output: Samples selected by RGS: X x x x . applied to select samples based on their assigned probabilities,
+r N 1 N 2 M which are then added to O . This process continues until the
+1. Count all the remaining unlabeled sample set: c
+R O O R R R . sample set reaches the budget size M.
+c 1 2 K N
+2. j 0. The selection rule of RGS is illustrated in Fig. 6(b). Sup-
+3. while j M N do pose A, B, and C represent samples selected by iRDM. During
+4. for R i in R do the greedy selection process, each candidate point in the sam-
+5. Calculate the minimum sample distance from R i to O c by ple space is evaluated based on its minimal distance to the
+Eq. (10). selected points, which is converted into a probability. For
+6. end for
+example, points E, F, G, and H are evaluated, and their prob-
+7. Calculate the selection probability of samples by Eq. (12).
+abilities P , P , P , and P are computed accordingly. The
+8. Use the roulette wheel method to select a sample R from R to E F G H
+enter the set O based on the probability. i next sample is selected based on these probabilities.
+c
+9. Remove R from set R. Selecting samples using the iRDM-RGS strategy, the algo-
+i
+10. j j 1. rithm then computes the effectiveness values and ultimately
+11. end while generates a labeled dataset for deep learning model training.
+12. Set X O . The combination of iRDM’s focus on representativeness and
+r c
+13. return Sample selected by RGS: X r x N 1 x N 2 x M . RGS’s emphasis on diversity ensures efficient sample selection,

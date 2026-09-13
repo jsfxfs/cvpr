@@ -1,0 +1,48 @@
+System-of-systems effectiveness evaluation of UAV swarm: A data-driven perspective 13
+Table 3 Statistical results for different SEE models.
+Metrics ResNet-Skew SE-DEA-SVM KL-SAE 1D-CNN BPNN-ATT GCN Transformer
+RMSE Mean 0.081 0.181(+) 0.167(+) 0.232(+) 0.121(+) 0.230(+) 0.232(+)
+Std (10 3 ) 2.21 3.10 17.0 6.78 2.15 2.83 0.881
+MAE Mean 0.061 0.149(+) 0.134(+) 0.199(+) 0.090(+) 0.199(+) 0.198(+)
+Std (10 3 ) 2.00 2.20 14.5 6.65 7.92 3.40 2.15
+Table 4 Statistical results for different processing methods.
+Strategy RMSE MAE
+Mean Std (10 3 ) Mean Std (10 3 )
+Loop stacking 0.081 2.21 0.061 2.00
+Direct stacking 0.090(+) 2.01 0.070(+) 2.17
+1D with residual 0.108(+) 5.00 0.076(+) 2.33
+Table 5 Bias and metrics under different skewed loss.
+Parameter Overestimated bias (%) Large bias (%) RMSE
+k 0 9 22.60 8.60 0.086
+k 0 7 25.20 8.14 0.081
+k 0 5 32.70 15.30 0.08
+k 0 3 36.60 16.70 0.077
+k 0 42.60 19.30 0.076
+Fig. 8 Comparison of predicted error values under different loss
+tion and underestimation equally. This case serves as a natural
+functions.
+baseline for comparison. In terms of RMSE, the model trained
+with k 0 achieves the best result (0.076), indicating that sym-
+metric penalty functions may slightly improve general error
+after applying the skewed loss function. This shift towards neg- minimization. However, it also results in the highest overesti-
+ative bias is a natural consequence of introducing the skewed mation ratio (42.6 %) and the largest average overestimation
+loss, as it aims to reduce overestimated bias at the cost of bias. This suggests that while Huber loss provides good overall
+slightly increasing the underestimation for a few samples. fitting accuracy, it lacks control over the directionality of pre-
+Since the skewed loss can cause a negative shift in model diction errors, especially those that are risky in real-world
+loss, it is crucial to balance the degree of skew to optimize both UAVS deployments.
+bias reduction and overall model performance. Too much Subsequently, when k increases to 0.7, the sample bias is
+skew may reduce overestimation but increase RMSE, so find- substantially reduced, with the number of overestimated bias
+ing an appropriate parameter k is crucial. Therefore, we con- samples falling below 10 %, and only a minimal increase in
+duct experiments comparing the performance of skewed loss RMSE, compared to k 0 5. However, further increases in k
+functions with different parameters k. The proportion of sam- to 0.9 do not significantly alter the proportion of overesti-
+ples with predicted values greater than actual values and the mated bias samples. Thus, k 0 7 strikes a good balance
+corresponding RMSE indicators are statistically calculated as between reducing the overestimated bias and keeping RMSE
+metrics. The results are shown in Table 5. The overestimated within acceptable limits, ensuring that the model remains both
+bias represents the proportion of samples with overestimated accurate and efficient. This balance is significant because the
+bias, while the large overestimated bias indicates the percent- goal is to minimize the impact of overestimation on decision-
+age of samples where the overestimated bias between the pre- making, which is crucial in real-world applications. The slight
+dicted performance value and the actual value exceeds 0.1. increase in RMSE when using k 0 7, is a reasonable trade-
+In Table 5, as the parameter k increases, the proportion of off for the reduction in overestimated bias. This property is
+samples with overestimated and large biases decreases, but the crucial in mission-critical UAVS tasks, where the cost of opti-
+RMSE index increases. Specifically, when k 0, the skewed mistic predictions can outweigh the cost of conservative ones.
+loss reduces to the standard Huber loss, treating overestima- Thus, compared to the symmetric Huber loss, our skewed loss

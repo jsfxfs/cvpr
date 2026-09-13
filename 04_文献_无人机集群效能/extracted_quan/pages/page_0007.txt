@@ -1,0 +1,63 @@
+System-of-systems effectiveness evaluation of UAV swarm: A data-driven perspective 7
+Fig. 3 Comparison between loop stacking and direct stacking.
+Table 2 Structure of ResNet-Skew.
+Block Structure Block Structure
+Block 1 3 3 64 1 Block 2 3 3 64
+2
+3 3 64
+Block 3 3 3 128 Block 4 3 3 256
+2 2
+3 3 128 3 3 256
+Block 5 Average pooling Block 6 64 64
+which is crucial for capturing the complex relationships among 4.3. Skewed loss function
+SoS indicators. The detailed structure of the proposed ResNet-
+Skew model is shown in Table 2.
+The loss function is essential for assessing the accuracy of a
+The model consists of 13 convolutional layers, each with
+model’s predictions, quantifying the discrepancy between the
+3 3 kernels, that process the SoS indicator features. Residual model’s predicted value f x and the true effectiveness value
+i
+structures are incorporated into the network, allowing shallow
+y . A smaller loss value indicates better model robustness.
+features to skip two convolution layers and reach deeper layers F i or this task, the Huber loss function44 is used as the founda-
+in blocks 2, 3, and 4, effectively maintaining robust training
+tion due to its combination of the advantages of both the
+performance even as the network depth increases.
+Mean Absolute Error (MAE) and Mean Squared Error
+In terms of the residual process, denote the original data as
+(MSE) loss functions. The Huber loss applies the MAE for
+X, and the data processed by the first and the second convolu-
+large errors, using a constant gradient for training, while it
+tion layer of blocks 2 to 4 as Z and Y, which can be expressed
+switches to the MSE for small errors, allowing for a smaller
+as
+gradient and ensuring that the loss decreases as the error
+diminishes. Let x be a sample with a true label y and predicted
+i i
+Z ReLU BN W 1 X 3 value f x i . The corresponding Huber loss is defined as
+Y ReLU BN W Z W X
+2 3 2d f x y d2 f x y d
+L i i i i 5
+where ReLU is the rectified linear unit and BN denotes batch Huber f x y 2 f x y 6 d
+normalization and W W denote the kernel of convolution i i i i
+1 2
+layer. W is a linear transformation matrix. represent the where d is the threshold parameter. When the bias between
+3
+convolution process. After two convolution layers, the original f x and y smaller than or equal to d, the Huber loss applies
+i i
+feature X would be directly added to the processed data as Y. MSE (squared error), and switches to MAE (absolute error)
+The goal of the SEE model is to predict the effectiveness when the error exceeds d. This design allows the loss to be
+value. Therefore, the feature data processed by the convolution quadratic near zero to ensure smooth gradients, and linear
+and residual structures needs to be transformed into a one- for large errors.
+dimensional effectiveness value. After data conversion by aver- However, in practical scenarios, particularly when evaluat-
+age pooling, two Fully Connected (FC) layers are used to ing the effectiveness of swarm systems, discrepancies where the
+regress the SoS effectiveness. The output data x is trans- model’s predicted effectiveness exceeds the actual effectiveness
+o
+formed into a 0–1 effectiveness value E using the Sigmoid can result in an overestimation of the system’s capabilities. If
+s
+function as this overestimation (predicted effectiveness exceeding actual
+performance) leads to deployment, the system may fail during
+1
+E 4 execution, as its actual performance will not meet expectations.
+s 1 e xo
+Such misalignments can have severe consequences, particularly

@@ -1,0 +1,41 @@
+18 W. QUAN et al.
+Fig. 11 Simulation process of optimized UAVS schemes.
+on different combinations of weights set in Eq. (2), in order to detection without tracking tasks. This reduces task complexity
+test generalization and sensitivity of the model. but changes mission priorities compared to the original
+scenario.
+6.5.1. Generalization analysis for different scenarios These two target scenarios represent both environmental
+To further evaluate the generalization capability and applica- and task-level variations from the original setting, providing
+bility boundaries of the proposed Data-driven SEE model, a basis for assessing the model’s adaptability.
+we conducted transfer learning experiments across different The transfer learning process is implemented as follows: (A)
+task scenarios. The goal is to determine whether the Data- The original ResNet-skew model is trained using 1000 samples
+driven model, originally trained on one scenario, can be effec- from the original scenario. (B) To adapt the model to each tar-
+tively adapted to a new environment with a limited number of get scenario, 200 labeled samples from the respective new sce-
+additional samples, thus verifying its potential for fast deploy- nario are added to fine-tune the model parameters. (C) Model
+ment in varying operational contexts. performance is evaluated using RMSE and MAE on the sepa-
+For the transfer learning process, the pre-trained ResNet- rate 200 samples test set for each target scenario. Based on the
+skew model, originally trained on the urban detection and above setting, the generalization performance of the ResNet-
+tracking task, is fine-tuned using a small number of samples skew model is shown in Table 12. The results demonstrate that
+from a new target scenario. This strategy allows the model the transfer learning approach enables the SEE model to main-
+to quickly adjust to new scene characteristics without losing tain good predictive performance with only a small amount of
+its previously learned knowledge, reflecting an efficient and additional data from the target domain.
+scalable generalization mechanism. For scenario 1 (Mountain detection and tracking Task), the
+To verify the generalization of the ResNet-skew model, RMSE increased slightly from 0.073 to 0.082, while MAE
+three task scenarios are considered in this study: increased from 0.055 to 0.063. These results confirm that the
+Original Scenario (Urban detection and tracking mission): model effectively generalizes to new environments with similar
+The base scenario used to train the original model, involving task structures. For scenario 2 (Urban detection task),
+UAVS operations in an urban environment with detection although the operating environment remains similar to the
+and target tracking objectives. original scenario, the task structure differs (tracking is
+Target Scenario 1 (Mountain detection and tracking mis- removed). As a result, the RMSE increases to 0.088 and the
+sion): A new scenario featuring UAV operations in a moun- MAE to 0.069. While higher than scenario 1, it is still accept-
+tainous environment. Compared to the original scenario, this able. These findings suggest that the SEE model possesses a
+task involves different terrain constraints, communication certain degree of generalization capability and can be effi-
+challenges, and potential sensor limitations, while maintaining ciently adapted to new but related scenarios through limited
+a similar dual-objective (exploration and tracking) structure. transfer learning.
+Target Scenario 2 (Urban detection mission): Another new While the model shows promising adaptability across mod-
+scenario set in an urban environment but focused solely on erately different scenarios, drastic changes in task structure or
+Table 12 Statistical results for different scenarios.
+Strategy RMSE MAE
+Mean Std (10 3 ) Mean Std (10 3)
+Original 0.073 2.02 0.055 1.31
+Scenario 1 0.082 2.93 0.063 2.58
+Scenario 2 0.088 2.00 0.069 1.40

@@ -1,0 +1,64 @@
+2 W. QUAN et al.
+unmanned swarm systems. As an indispensable link in demon- diction biases must be accounted for in real-world
+strating UAVS capabilities, system-of-Systems Effectiveness applications. Secondly, regarding data dependencies, training
+Evaluation (SEE) has received increasing attention. Data-driven evaluation models requires a large amount of
+The aim of SEE for UAVS is to evaluate (predict) the effec- extensive training data. However, obtaining effectiveness data
+tiveness UAVS systems can achieve in specific tasks, which is for UAVS requires running system simulations for annotation,
+accomplished by establishing an evaluation framework to which is time-consuming and relatively expensive.12
+assess their effectiveness based on SoS indicators before exe- The overall goal of this paper is to develop a Data-driven
+cuting tasks. Through providing a comprehensive, precise, framework that addresses the aforementioned challenges of
+and real-time evaluation, SEE can provide critical information model-demand alignment and data dependencies. To achieve
+and thus guide the decision process in subsequent missions. this goal, this paper proposes a Data-driven SEE framework,
+The SEE of UAVS is a complex, multi-dimensional problem including the main evaluation network: a residual-based eval-
+due to the UAVS SoS’s nonlinearity, hierarchy, and emergent uation network with skewed loss, and an active learning strat-
+properties.5 The vast swarm sizes, intricate interconnections, egy to select high-value samples for annotation and model
+and the large number of diverse indicators further complicate training. The main contributions of this paper can be summa-
+the SEE. Given these challenges, this paper aims to establish a rized as follows:
+holistic evaluation framework to accurately assess the effec-
+tiveness of UAVS. (1) A comprehensive Data-driven SEE evaluation frame-
+Over the past decades, various SEE methodologies have work is proposed, which integrates a deep learning-
+been proposed, which can be categorized into four main based evaluation network: Residual Network with Skew
+groups: experience-driven, mathematical analysis-driven, loss (ResNet-Skew) with an efficient active learning-
+simulation-driven, and Data-driven SEE. The experience- based sample selection strategy. This framework enables
+driven method6 and mathematical analysis-driven approach fast, accurate evaluation of UAVS system effectiveness
+aim to establish evaluation models from SoS indicators to with reduced labeling costs, supports system configura-
+effectiveness based on expert knowledge and analytical math- tion optimization, and demonstrates strong generaliza-
+ematical functions. Due to the complexity and emergence of tion ability through transfer learning across different
+UAVS systems, the difficulty of constructing a credible method operational scenarios.
+through experts’ subjective experience7 or mathematical mod- (2) A ResNet-Skew evaluation network is designed for fast
+els to evaluate effectiveness is gradually increasing. For such and accurate Data-driven evaluation of UAVS. This
+complex systems, simulation-based SEE methods are increas- evaluation model integrates the ResNet model to cap-
+ingly applied. The operation and interaction of UAVS in ture feature dependencies in SoS indicators processed
+actual environments can be simulated, thereby obtaining more by loop stacking methods. A skewed loss function is also
+objective and accurate evaluation results.8 However, the acqui- applied to reflect the asymmetric risk preference in
+sition of effectiveness for each task requires time-consuming UAVS operations, penalizing overestimation more
+simulations and statistics, which makes it difficult to provide heavily to meet mission-critical safety requirements.
+rapid results for a specific system. (3) An active learning strategy is proposed to select high-
+Utilizing simulated historical or practical data, the Data- value samples for labeling through the swarm simulation
+driven approach can establish an intelligent evaluation model system. By combining the cluster-based method and ran-
+that deeply reflects the complexity of swarm systems and dom greedy sampling, the algorithm can reduce the
+achieves precise evaluation. This method not only avoids required number of labeled samples significantly while
+human interference, improving the objectivity and accuracy maintaining evaluation accuracy.
+of evaluation results, but also enables optimization of the (4) The proposed framework is extensively validated
+parameters, strategies, or structures of the swarm system.9 through comparisons with state-of-the-art baselines,
+As an advanced technique within the Data-driven field, deep ablation and utility analysis, as well as generalization
+learning-based evaluation10 can learn from extensive historical and sensitivity tests, demonstrating its robustness and
+data, continuously improving the model’s generalization abil- practical applicability across various scenarios.
+ity, and thus providing high-precision evaluation in situations
+with abundant evaluation data. The rest of this paper is organized as follows. Section 2
+The deep learning-driven SEE still faces several challenges reviews the related work on SEE. The framework of the pro-
+related to model-demand alignment and data dependencies. posed Data-driven SEE is described in Section 3. Sections 4
+First, deep learning struggles to directly align the established and 5 elaborate on the deep learning-based SEE and active
+UAVS model with real-world application requirements. On learning strategy of the framework. Section 6 presents the
+one hand, the extracted indicator systems typically consist of experiment of the proposed method. Finally, Section 7 con-
+one-dimensional, non-sequential features, which are inconsis- cludes this paper.
+tent with the typical feature format used in advanced deep
+learning. On the other hand, general prediction models rarely
+consider the impact of bias,11 which is the discrepancy between 2. Related works
+predicted and actual effectiveness values. In application sce-
+2.1. SEE me thod
+narios, when the model’s predicted effectiveness exceeds the
+actual effectiveness, this can lead to an overestimation of the
+system’s capabilities. If this configuration is used to perform A variety of approaches have been proposed to solve SEE
+a task, the UAVS system might fail because its actual effective- problems. The evaluation process typically begins by defining
+ness does not meet expectations. Therefore, the impact of pre- a comprehensive set of SoS indicators, followed by the
