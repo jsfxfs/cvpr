@@ -1,0 +1,402 @@
+       A Review on Current Status and Methodology
+      of UAV Swarm Combat Effectiveness Evaluation
+
+          Wenjia Wang, Jialong Zhang, Hanzhang Xue, Li Yu, and Lei Ye(B)
+
+        Test Center, National University of Defense Technology, Xi’an 710102, China
+                                  yelei@nudt.edu.cn
+
+
+
+       Abstract. This paper systematically summarizes the research development in the
+       field of UAV swarm combat effectiveness evaluation and integrates the develop-
+       ment of the evaluation index system and methodology through a multidimen-
+       sional categorization framework. First, in terms of the evaluation index system,
+       the existing studies are categorized into a three-dimensional evaluation frame-
+       work oriented to capability factors, environment factors, and combat missions.
+       Second, at the technical level of effectiveness evaluation methodology, existing
+       studies are divided into four categories: qualitative analysis based on expert expe-
+       rience, modeling methodology based on mathematical analysis, simulation-based
+       dynamic deduction technology, and data-driven and artificial intelligence method-
+       ology. Finally, this paper analyzes the shortcomings of the current research in
+       both evaluation system robustness and dynamic adaptive evaluation, and proposes
+       that the future trends are to develop the multi-mission collaborative evaluation
+       index system, the dynamic evaluation model, the intelligence-driven evaluation-
+       optimization closed-loop mechanism, and other related research. The results
+       can provide theoretical support for UAV swarm combat effectiveness evaluation
+       research.
+
+       Keywords: UAV Swarm · Effectiveness Evaluation · Index System · Evaluation
+       Methodology
+
+
+
+1 Introduction
+In recent years, the breakthroughs in artificial intelligence and group intelligence algo-
+rithms have pushed the UAV to evolve towards clustering and autonomy, which have
+jointly produced the new combat mode of UAV swarm combat [1]. The core concept
+of UAV swarm combat refers to a combat system formed by multiple UAVs through
+autonomous coordination and intelligent networking, with the support of a networked
+information system to achieve a centralized and unified combat capability [2]. UAVs
+within a swarm can fly autonomously to the mission area while avoiding collisions with
+other units, and can automatically detect threats and locate targets based on artificial
+intelligence and image processing technology.
+    With the continuous development of the intelligence and control technology of UAV
+swarm, it has gradually formed a combat mode based on the theory of OODA (obser-
+vation, orientation, decision, action) [3]. In order to measure the UAV swarm in the
+
+© Beijing HIWING Scientific and Technological Information Institute 2026
+S. Xie et al. (Eds.): ICAUS 2025, LNEE 1579, pp. 284–292, 2026.
+https://doi.org/10.1007/978-981-95-7668-5_27
+             A Review on Current Status and Methodology of UAV Swarm Combat            285
+
+combat environment, it is necessary to analyze the combat capability, combat suitabil-
+ity, technical performance, and mission completion rate to realize the reliable evaluation
+of UAV swarm combat effectiveness. The UAV swarm combat effectiveness evaluation
+based on high-confidence evaluation indexes and models, which can obtain the effective
+description of UAV swarm autonomous and cooperative characteristics, and provide a
+basis for whether UAV swarm meet the requirements.
+     The core steps of the UAV swarm combat effectiveness evaluation mainly include
+the following points. First, the purpose and scope of the evaluation are clarified in
+the light of the combat mission. Second, starting from the top-level index (i.e., com-
+bat effectiveness), determine the overall framework of the evaluation, and construct a
+combat effectiveness evaluation index system. Third, design the evaluation method and
+establish the evaluation model. Finally, calculate and analyze the UAV swarm com-
+bat effectiveness evaluation and conduct experimental verification and analysis. UAV
+swarm combat effectiveness evaluation is characterized by emergence, dynamics, and
+a nonlinear coordination mechanism when performing combat missions, which makes
+the evaluation difficult in the design of evaluation indexes and high in the requirements
+of evaluation models.
+
+
+2 Research on UAV Swarm Combat Effectiveness Evaluation Index
+  System
+
+2.1 The Capability-Based Evaluation Index System
+
+The evaluation index system is the basic framework of UAV swarm combat effective-
+ness evaluation, and its scientificity and completeness directly affect the reliability of
+the evaluation result. The capability-based UAV swarm combat effectiveness evaluation
+index system, i.e., the basic parameter indexes that enable the swarm to operate safely
+and stably, and complete the mission successfully. This type of evaluation index sys-
+tem includes the UAV’s survivability, maneuverability, perception, communication, and
+combat capability, as well as autonomous decision-making capability, cooperative inter-
+action capability, and continuous learning capability, etc., which are inherent, intrinsic,
+and controllable elements of the swarm. A number of scholars have already researched
+this problem [4–9].
+    It can be concluded from the analysis of existing studies that the combat capability
+of UAV swarm is based on their individual performance and the overall performance of
+the swarm, and current research has formed a consensus on the core capability index,
+focusing on the dimensions of survivability, cooperative interaction, and autonomous
+decision-making, and has verified the basic efficacy through simulation and small-scale
+tests. However, most of the existing researches consider the inherent attributes of UAV
+swarm, focusing on the construction of UAV swarm equipment performance index sys-
+tem, and less consideration is given to the degree of influence of the UAV swarm under the
+complex combat environment or the effect of the capability in the complex confrontation
+environment.
+286       W. Wang et al.
+
+2.2 The Environment-Based Evaluation Index System
+Environmental factors are externally imposed conditions and constraints, such as terrain,
+weather, electromagnetic interference, and other uncontrollable factors. UAV swarm will
+be affected by the surrounding environmental factors when it carries out the mission,
+and the external conditions in which the swarm is located have a direct impact on the
+UAV swarm combat effectiveness. Authors in [10–14] have conducted in-depth studies
+on such problems.
+    By analyzing the existing research, it can be concluded that the current research is
+fruitful at the level of environment modeling and intelligent algorithms. The construction
+of the evaluation index system oriented to environmental factors takes into account the
+environmental adaptability and appropriateness of use of the UAV swarm, which can
+measure the combat capability of the UAV swarm in a more specific way. However, the
+existing research in dynamic confrontation adaptability, large-scale swarm robustness,
+and other aspects of the research is not perfect; the construction of the evaluation index
+system should be combined with combat simulation and practical exercises.
+
+2.3 The Combat Mission-Based Evaluation Index System
+Combat missions are the demands of the application scenarios, involving specific combat
+objectives, mission complexity, threat level, and other variables. The construction of the
+combat mission-based evaluation index system can reflect the utilization of UAV swarm
+combat capability in various mission segments and combat phases in the context of
+combat missions. This type of problem has been studied in the literature [15–20].
+    By summarizing the relevant research, it can be seen that the evaluation index system
+for combat missions has made significant research achievements in terms of hierarchical
+structure and specialized index. The relevant research mainly focuses on evaluating the
+performance of UAV swarm with regard to the mission requirements. However, when
+analyzing the combat effectiveness, the reliability of UAV swarm in different combat
+environments and the cooperation with combat commanders should also be taken into
+account to build a more perfect evaluation index system.
+
+3 Development of UAV Swarm Combat Effectiveness Evaluation
+  Methodology
+3.1 Experience-Based Evaluation Methodology
+Experience-based evaluation methodology mainly refers to methods based on human
+subjective experience or specialized knowledge. The UAV swarm combat effectiveness
+evaluation is conducted through the subjective experience of domain experts to judge
+the impact of each evaluation index, combined with qualitative analysis and quantitative
+calculation.
+(1) The analytic hierarchy process (AHP) method is to decompose complex problems
+    into a hierarchical structure, through subjective experience to determine the weight
+    of the indexes, and calculate the total score. In UAV swarm combat effectiveness
+    evaluation, AHP can effectively integrate various types of indexes and establish a
+    hierarchical evaluation system to provide evaluation results [21–23].
+             A Review on Current Status and Methodology of UAV Swarm Combat            287
+
+(2) The fuzzy comprehensive evaluation method uses the fuzzy relationship synthesis
+    theory to deal with uncertainty and ambiguity in evaluation. By synthesizing the
+    fuzzy evaluation values and weights of the effectiveness evaluation indexes, the
+    qualitative evaluation is transformed into the quantitative evaluation [24–26].
+    The advantage of the experience-based evaluation method is that it can effectively
+integrate quantitative and qualitative indexes, structurally deal with the complex rela-
+tionships between indexes, be simple to calculate, and reflect the preferences of decision
+makers. However, the determination of weights is highly subjective, and it is difficult to
+ensure that each index can be quantified through experimentation.
+
+3.2 Mathematical-Based Evaluation Methodology
+The mathematical modeling-based evaluation method is to take the mathematical model
+as the basis, according to the meaning of the evaluation indexes and the relation-
+ship between them, analyze the internal connection of each index, and establish the
+mathematical evaluation model.
+(1) The ADC method uses three elements, A(availability), D(dependability) and
+    C(capability), to evaluate the comprehensive indexes: E = ADC. The ADC method
+    analyzes the problem logically, and some scholars have evaluated the UAV swarm
+    combat effectiveness using this method [27, 28].
+(2) The system effectiveness analysis method defines the swarm capability and mission
+    requirement in the combat environment, respectively, and calculates effectiveness
+    by comparing the intersection set of the two. This method focuses on the matching
+    degree between the capability and requirement, and is suitable for evaluating whether
+    or not a UAV swarm can satisfy a particular mission [29, 30].
+(3) The data envelopment analysis method is a linear programming method for evaluat-
+    ing the relative effectiveness of units in a complex system. This method can be used
+    to compare the combat effectiveness of different UAV swarms and different combat
+    plans, and provide specific directions for improvement [31, 32].
+    The advantages of mathematical modeling-based evaluation methods include effi-
+cient calculation, interpretable results, and the ability to compare multiple combat plans.
+However, such a method is limited to modeling complex systems, and it is difficult to
+comprehensively show the performance of the UAV swarm.
+
+3.3 Simulation-Based Evaluation Methodology
+The simulation-based evaluation method is to build a simulation model that covers the
+UAV swarm, combat environment, and mission process according to the combat mission,
+and then run a large number of simulation experiments and output the statistical results
+to evaluate the combat effectiveness.
+(1) The Monte Carlo method simulates the random phenomena that may occur in
+    real combat through multiple random sampling, and then summarizes the simu-
+    lation experimental data obtained, analyzes the distributions of mean, variance, and
+    confidence intervals to obtain the evaluation result of UAV swarm [33, 34].
+288        W. Wang et al.
+
+(2) The system dynamics method describes the interactions of elements through causal
+    analysis. In UAV swarm combat effectiveness evaluation, this method effectively
+    solves the complexity and uncertainty problems by quantifying the dynamic coupling
+    relationship among capability, environment, and mission [19, 35].
+(3) The simulation verification method based on the architecture framework mainly
+    adopts DoDAF/UAF and other frameworks to describe the structure, behavior, and
+    interaction of the combat system. Through simulation and data analysis, it can effec-
+    tively solve the problem of UAV swarm combat effectiveness optimization [36,
+    37].
+    The advantage of the simulation-based evaluation method is that it can deal with
+highly complex, dynamic, and nonlinear systems by establishing a simulation model that
+is adapted to actual combat mission and combat environment. The shortcoming is that
+the development of the model requires a large amount of data and a high computational
+overhead.
+
+
+3.4 Data-Driven and Artificial Intelligence-Based Evaluation Methodology
+Data-driven and artificial intelligence evaluation methods derived from big data and
+artificial intelligence technology refer to the application of a large amount of data to train
+models and establish relationships from input to output, which applies to performance
+prediction and effectiveness evaluation.
+(1) The neural network method is a machine learning algorithm that is trained to adap-
+    tively deal with complex nonlinear relationships. When using this method to evaluate
+    UAV swarm combat effectiveness, first, train the optimal neural network evaluation
+    model through a large amount of data, and then output the evaluation result by taking
+    the obtained index values as inputs [38, 39].
+(2) The support vector machine method is to transfer problems from the input space to a
+    high-dimensional space through a kernel function nonlinear mapping. This method
+    can accurately describe the interactions between UAV swarm combat effectiveness
+    indexes and is suitable for solving prediction problems [40, 41].
+(3) The Bayesian network method is an uncertainty inference method based on a prob-
+    abilistic graphical model. The UAV swarm combat effectiveness evaluation can use
+    directed acyclic graphs to structurally characterize the conditional dependencies
+    between elements within the swarm and quantify the uncertainty transfer mecha-
+    nism based on conditional probability tables. In addition, this method can analyze
+    the influence of each index on the overall effectiveness through the inference [16,
+    42].
+    Data-driven and artificial intelligence evaluation methods have strong prediction and
+evaluation capability, which are of great value to the UAV swarm combat effectiveness
+evaluation. Noting that this type of method requires a large amount of high-quality
+training data to ensure the accuracy and reliability of the evaluation results.
+             A Review on Current Status and Methodology of UAV Swarm Combat               289
+
+4 Existing Research Gaps and Future Research Perspectives
+
+4.1 Gaps in Existing Research
+Although UAV swarm combat effectiveness evaluation has made great progress, there
+are still significant limitations in terms of the improvement of the index system, the
+innovation of the modeling technology, and the interpretability of the evaluation results,
+which constrain the application in real-world combat decision-making.
+(1) The effectiveness evaluation lacks standardization and robustness. The current eval-
+    uation has not yet formed a unified structure covering “capability-environment-
+    mission”, and the construction of the existing index system is mostly based on tradi-
+    tional combat scenarios, making it difficult to support the new combat missions. In
+    addition, the existing evaluation mostly relies on ideal data sources, and it is difficult
+    to deal with the problem of key indexes being unavailable due to interference in
+    a combat environment. A scientifically valid mechanism for alternative indexes is
+    lacking, and the robustness of the evaluation is insufficient. The interpretability of
+    the results of existing effectiveness evaluation also needs to be improved.
+(2) The existing UAV swarm combat effectiveness evaluation has limitations in prac-
+    tical applications. In terms of dynamic adaptability, the traditional static model is
+    difficult to portray the time-varying combat environment and swarm state evolution.
+    In terms of solving efficiency, most of the methods find it difficult to balance the
+    accuracy and solving scale, and solution efficiency tends to decay exponentially
+    with increasing size. In terms of uncertainty quantification, probabilistic methods
+    are overly dependent on a priori assumptions and ignore cognitive uncertainty. In
+    terms of method synergy, various evaluation methods can only achieve better results
+    in specific scenarios, and hybrid evaluation methods are less frequently applied.
+
+4.2 Prospects for Future Research
+
+In view of the current study of UAV swarm combat effectiveness evaluation and the
+deficiencies that exist, combined with the future combat missions and the development
+of intelligent technology, this problem can be researched in the future from the following
+aspects.
+(1) Establish a multi-mission coordinated evaluation index system. In the future, UAV
+    swarm needs to complete many different combat missions, therefore, it is necessary
+    to consider diversified mission requirements when constructing the UAV swarm
+    combat effectiveness evaluation index system, realize the expansion from single-
+    mission to multi-mission cooperation, and establish an expandable effectiveness
+    evaluation index system that applies to many different combat missions.
+(2) Dynamic effectiveness evaluation research. The existing UAV swarm combat effec-
+    tiveness evaluation is mainly based on static evaluation, in the future, when con-
+    structing the effectiveness evaluation, it should focus on the real-time and dynamic
+    characteristics of UAV swarm under the real-word combat environment, and com-
+    bine the real-time missions, combat objects, etc., to establish a dynamic model and
+    realize the dynamic evaluation of UAV swarm combat effectiveness.
+290        W. Wang et al.
+
+(3) Intelligence-driven evaluation-optimization closed-loop research. By taking the
+    results of the effectiveness evaluation as the feedback information, an evaluation-
+    optimization closed-loop feedback mechanism can be constructed. Combined with
+    intelligent algorithms, the iteration of real-time effectiveness evaluation and dynamic
+    decision-making will be carried out to achieve dynamic optimization of effective-
+    ness, promote the UAV swarm combat in the direction of autonomous evolution, and
+    provide technical support for future unmanned combat.
+
+5 Conclusion
+
+This paper focuses on the core issues of UAV swarm combat effectiveness evaluation,
+through systematically analyzing the construction of the evaluation index system and the
+technical development of the evaluation method, reviewing and classifying the existing
+research, and analyzing the gaps of current research and the development trend in the
+future. The research results can provide technical reference for relevant personnel to
+carry out the unmanned combat effectiveness evaluation.
+Funding Resources This work was supported in part by the China Postdoctoral Science
+Foundation under Grant GZC20242273 and 2025 M774443, and the Youth Foundation
+of the National University of Defense Technology under Grant ZK23–59.
+
+
+References
+ 1. Alqudsi, Y., Makaraci, M.: UAV swarms: research, challenges, and future directions[J]. J.
+    Eng. Appl. Sci. 72(1), 12 (2025)
+ 2. Niu, Y., Xiao, X., Ke, G.: Operation concept and key techniques of unmanned aerial vehicle
+    swarms[J]. Natl. Def. Sci. Technol. 34(05), 37–43 (2013)
+ 3. Zhao, R., Yu, H., You, Y., et al.: Review on current status and technology method of unmanned
+    swarm test evaluation[J]. Syst. Eng. Electr. 46(02), 570–585 (2024)
+ 4. Qi, Z., Zhang, H., Yi, S., et al.: Research on the index system of intelligent UAV group combat
+    effectiveness evaluation[J]. Ship Electr. Eng. 41(09), 1–5 (2021)
+ 5. Huang, J., Zhou, D.: Design and analysis of an evaluation index system for UAV cooperative
+    combat effectiveness[J]. J. Xi’an Technol. Univ. 40(01), 38–44 (2020)
+ 6. Wang, Y., Shi, X., Li, C.: Research on evaluation of UAV cooperative combat effectiveness
+    based on DoDAF[J]. J. Air Force Eng. Univ. Nat. Sci. Ed. 21(06), 66–72 (2020)
+ 7. Wu, J., Wang, Q.: Operational effectiveness evaluation for formation attacking ground
+    targets[J]. Comp. Syst. Appl. 21(03), 83–86 (2012)
+ 8. Wang, Y., Wen, J., Yuan, T., et al.: Main performance index of UAV aggregation problem[J].
+    Ordn. Ind. Autom. 39(10), 71–75 (2020)
+ 9. Amorim, J., Alves, V., de Freitas, E.: Assessing a swarm-GAP based solution for the task
+    allocation problem in dynamic scenarios[J]. Expert Syst. Appl. 152, 113437 (2020)
+10. Gao, Y., Li, D., Liu, X.: UAV swarm cooperative situation perception consensus evaluation
+    [J]. Acta Electron. Sin. 47(01), 190–196 (2019)
+11. Tang, S., Zhou, Z., Jiang, J., et al.: Consensus evaluation of UAV swarm cooperative situation
+    awareness considering perturbation [J]. ACTA Aeronautica et Astronautica Sinica. 41(S2),
+    13–23 (2020)
+              A Review on Current Status and Methodology of UAV Swarm Combat                  291
+
+12. Gao, Y., Li, D.: UAV swarm cooperative situation perception consensus evaluation method
+    based on three-parameter interval number and heronian mean operator[J]. IEEE Access. 6,
+    73328–73340 (2018)
+13. Chen, S., Zhang, H.: Combat capability evaluation of heterogeneous UAV swarm based on
+    combat network model[J]. Mil. Oper. Res. Syst. Eng. 33(01), 38–43 (2019)
+14. Gao, Y., Li, D.: Consensus evaluation method of multi-ground-target threat for unmanned
+    aerial vehicle swarm based on heterogeneous group decision making[J]. Comp. Electr. Eng.
+    74, 223–232 (2019)
+15. Xu, D., Zhou, C., Cao, Z., et al.: Combat effectiveness evaluation of unmanned ground combat
+    equipment based on matter element extension method [J]. J. Gun Launch Control. 43(05),
+    29–34 (2022)
+16. Wang, J.J., Ma, J., Hou, J., et al.: Operational effectiveness evaluation of UAV swarm based
+    on Bayesian networks. J. Phys: Conf. Series. IOP Publishing. 2282(1), 012001 (2022)
+17. Li, K., Huang, Q.: Effectiveness analysis of cooperative engagement for UAV swarm. In:
+    International Conference on Defence Technology, pp. 1009–1014. The Academy of Military
+    Science, Beijing (2018)
+18. Li, K., Huang, Q.: Effectiveness analysis on self-operational UCAVs[J]. Fire Control
+    Command Control. 44(09), 92–97 (2019)
+19. Jia, N., Yang, Z., Yang, K.: Operational effectiveness evaluation of the swarming UAVs combat
+    system based on a system dynamics model[J]. IEEE Access. 7, 25209–25224 (2019)
+20. Zhang, X., Luo, P., Hu, X.: Defense success rate evaluation for UAV swarm defense system.
+    In: Proceedings of the 2nd International Conference on Intelligent Systems, Metaheuristics &
+    Swarm Intelligence, pp. 127–132 (2018)
+21. Hu, J., Chen, H., Liu, L., et al.: Research on operational effectiveness evaluation of UAV
+    swarm [J]. Fire Control Command Control. 47(04), 164–168 (2022)
+22. Wang, B., Zhao, J., Chen, B., et al.: Quantitative research on UAV combat capability based
+    on improved AHP [J]. Fire Control Command Control. 46(06), 115–120 (2021)
+23. Han, Y., Li, Y.: Evaluation of unmanned aerial vehicle swarm combat effectiveness based on
+    improved analytic hierarchy process[J]. Ship. Electron. Eng. 44(07), 123–127+137 (2024)
+24. Wang, X., Zhang, Y., Wang, L., et al.: Task decision-making for UAV swarms based on
+    robustness evaluation. In: 2019 IEEE 19th International Conference on Software Quality,
+    Reliability and Security Companion, pp. 242–248. IEEE (2019)
+25. Han, Y., Fang, D., Zhang, H., et al.: Evaluation of attack capability of UAV intelligent swarm
+    based on AHP fuzzy evaluation. J. Phys: Conf Series. IOP Publishing. 1651(1), 012012 (2020)
+26. Liu, T., Yu, N., Wang, F., et al.: Effectiveness evaluation of unmanned cluster system based
+    on fuzzy comprehensive evaluation[J]. Command Informat. Syst. Technol. 14(04), 20–25+44
+    (2023)
+27. Huang, G., Wang, M.: Effectiveness evaluation of multi-fighter cooperated combat based on
+    ADC model[J]. Fire Control Command Control. 38(10), 126–129 (2013)
+28. Zhou, Q., Wu, H.: Research on performance evaluation of UAV swarm based on ADC-AHP.
+    In: Proceedings of the 2023 International Conference on Artificial Intelligence, Systems and
+    Network Security, vol. 2023, pp. 426–430
+29. He, X., Huang, F., Zhu, J., et al.: Reconnaissance effectiveness evaluation of artillery UAV
+    based on SEA[J]. Ship Electr. Eng. 36(12), 161–164 (2016)
+30. Cheng, Y., Wang, P., Wang, X.: The effectiveness analysis of the artillery UAV system based
+    on SEA[J]. Fire Control Command Control. 34(07), 126–128 (2009)
+31. Chen, L., Shen, Y., Ye, L.: Formation efficiency evaluating for tactical UAV system based on
+    benchmarking management and DEA methods[J]. Comp. Digital Eng. 44(11), 2184–2190
+    (2016)
+292        W. Wang et al.
+
+32. Cui, D., Li, H., Lu, M., et al.: Island transport efficiency evaluation method of civilian UAV
+    based on super-efficiency parallel network data envelopment analysis[J]. Chin. Med. Equip.
+    J. 44(01), 35–41 (2023)
+33. Wang, D., Guo, L., Sun, Z., et al.: The vulnerability analysis of UAVs under fragment strikes
+    based on Monte Carlo method[J]. J. Proj. Rocket. Missiles Guid. 44(06), 28–36 (2024)
+34. Tong, L., Gan, X., Zhang, H., et al.: Risk assessment of UAV collision considering multiple
+    factors[J]. J. Ordn. Equip. Eng. 44(04), 282–289 (2023)
+35. Zhao, B., Wang, F., Ma, H., et al.: Evaluation of air combat effectiveness based on system
+    dynamics[J]. J. Jilin Univ. (Inf. Sci. Ed.). 43(02), 327–337 (2025)
+36. Zhao, T., Gao, J., Huang, J.: Modelling and simulation of unmanned landing combat
+    architecture based on DoDAF[J]. Comp. Simul. 40(12), 46–54 (2023)
+37. Cui, R., Sun, J., Yang, K., et al.: Construction method of equipment operational test indicator
+    system based on UAF[J]. Syst. Eng. Electr. 47(05), 1536–1550 (2025)
+38. Wang, X., Huang, P., Tang, B.: Operational effectiveness evaluation of unmanned air defense
+    equipment based on GA-BP neural network[J]. Unmanned Syst. Technol. 5(03), 106–113
+    (2022)
+39. Wan, Z., Hu, J., Li, J., et al.: Effectiveness evaluation of land-based intelligent unmanned
+    combat systems based on graph convolutional networks[J]. ACTA Armamentarii. 45(S1),
+    271–277 (2024)
+40. Gan, X., Wang, Y., Wu, Y., et al.: Multi kernel SVM evaluation of UAV air ground com-
+    bat effectiveness based on AFSA. In: 2022 IEEE International Conference on Advances in
+    Electrical Engineering and Computer Applications, pp. 449–454. IEEE (2022)
+41. Li, X., Ma, X.: Operational effectiveness evaluation of electronic warfare UAV based on
+    chaotic particle swarm optimization and support vector machine[J]. Math. Pract. Theory.
+    53(02), 152–158 (2023)
+42. Chen, H.: Research on Combat Effectiveness Evaluation Method of Formation Based on
+    Bayesian Network[D]. Nanjing University of Posts and Telecommunications (2020)
+
